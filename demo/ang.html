@@ -15,11 +15,12 @@
 		<input type="radio" value="monkeys" ng-model="animals">Monkeys<br>
 		<input type="radio" value="ducks" ng-model="animals">Ducks
 	</form>
-	<div>
-		<p>{{animals}} were selected.</p>
+	<div ng-show="animals == 'ducks'">
+		Ducks
+	</div>
+	<div ng-show="animals == 'monkeys'">
+		Monkeys are excellent
 	</div>
 </div>
-
-
 </body>
 </html>
