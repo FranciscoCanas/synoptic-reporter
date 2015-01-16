@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+  <script src="angular/angular.min.js"></script>
+</head>
+<body>
+  <div>
+  	Has favourite animals: <input type="checkbox" ng-model="hasAnimals"><br/>
+  </div>
+  <div ng-show="hasAnimals">
+	 <form action="">
+		<input type="radio" value="monkeys" ng-model="animals">Monkeys<br>
+		<input type="radio" value="ducks" ng-model="animals">Ducks
+	</form>
+	<div>
+		<p>{{animals}} were selected.</p>
+	</div>
+</div>
+
+
+</body>
+</html>
