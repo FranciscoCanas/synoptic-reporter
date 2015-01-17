@@ -9,7 +9,7 @@ function initializeToggleables() {
 	$(toggleables).each(function(){
 		var targets = $(this).attr('target');
 		$.each(targets.split(' '), function( index, value ) {
-  			$('#'.concat(value)).hide();
+			$('#'.concat(value)).hide();
 		});
 	});
 }
@@ -23,6 +23,6 @@ element that will be toggled.
 function toggleElement() {
 	var toggleTargets = $(this).attr('target');
 	$.each(toggleTargets.split(' '), function( index, value ) {
-  		$('#'.concat(value)).toggle();	
+		$('#'.concat(value)).toggle();	
 	});
 }
