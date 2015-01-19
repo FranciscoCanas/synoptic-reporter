@@ -2,7 +2,7 @@
 <html lang="en" ng-app>
 <head>
 	<meta charset="utf-8">
-	<title>Demo</title>
+	<title>Angular UI Logic Demo</title>
 	<!-- Bootstrap Dependencies-->
 	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-responsive.css">
@@ -23,21 +23,23 @@
 					<div ng-show="listensToMusic == 'yes'">
 						Which genre do you prefer?
 						<form>
-						<input type="radio" value="megaphone" ng-model="musicGenre">Megaphone Crooners 
-						<input type="radio" value="mariachi" ng-model="musicGenre">Mexican Mariachi 
-						<input type="radio" value="minstrel" ng-model="musicGenre">Banjo Minstrels 
+							<input type="radio" value="megaphone" ng-model="musicGenre">Megaphone Crooners 
+							<input type="radio" value="mariachi" ng-model="musicGenre">Mexican Mariachi 
+							<input type="radio" value="minstrel" ng-model="musicGenre">Banjo Minstrels 
 						</form>
 					</div>
 					<p>
-					<div ng-show="musicGenre == 'megaphone'">
-						Ah, the golden age of megaphone crooning!
-					</div>
-					<div ng-show="musicGenre == 'mariachi'">
-						Who can resist the irresistible force of the Mexican Mariachi band?
-					</div>
-					<div ng-show="musicGenre == 'minstrel'">
-						How problematic.
-					</div>
+						<div ng-show="musicGenre == 'megaphone'">
+							<a href="https://www.youtube.com/watch?v=6PlhJOzH0gY">
+								Ah, the golden age of megaphone crooning!
+							</a>
+						</div>
+						<div ng-show="musicGenre == 'mariachi'">
+							Who can resist the irresistible force of the Mexican Mariachi band?
+						</div>
+						<div ng-show="musicGenre == 'minstrel'">
+							To each his own.
+						</div>
 					</p>
 				</div>
 				<div id="filmQuestions">
@@ -58,38 +60,37 @@
 						</form>
 					</div>
 					<p>
-					<div ng-show="watchedReefer && watchedManos && !watchedPlan">
-						You'd definitely enjoy Plan 9. Give it a chance.
-					</div>
-					<div ng-show="watchedReefer && !watchedManos && watchedPlan">
-						I keep hearing great things about Manos. Maybe you should watch it.
-					</div>
-					<div ng-show="watchedPlan && watchedManos && !watchedReefer">
-						Reefer is a classic! You should watch it.
-					</div>
-					<div ng-show="watchedPlan && watchedManos && watchedReefer">
-						A real film buff.
-					</div>
+						<div ng-show="watchedReefer && watchedManos && !watchedPlan">
+							You'd definitely enjoy Plan 9. Give it a chance.
+						</div>
+						<div ng-show="watchedReefer && !watchedManos && watchedPlan">
+							I keep hearing great things about Manos. Maybe you should watch it.
+						</div>
+						<div ng-show="watchedPlan && watchedManos && !watchedReefer">
+							Reefer is a classic! You should watch it.
+						</div>
+						<div ng-show="watchedPlan && watchedManos && watchedReefer">
+							A real film buff.
+						</div>
 					</p>
 				</div>
-				<div id="animalQuestions">
+				<div id="televisionQuestions">
 					<div>
-						<p class="bg-primary">3. Animals</p>
-						<p>Have Pets: <input type="checkbox" ng-model="hasAnimals"></p>
+						<p class="bg-primary">3. Television</p>
+						<p>Watch Television: <input type="checkbox" ng-model="watchesTelevision"></p>
 					</div>
-					<div ng-show="hasAnimals">
-						Which kind of pets? (select all that apply)
-						<form action="">
-							<input type="checkbox" value="monkeys" ng-model="hasMonkeys">Monkeys<br>
-							<input type="checkbox" value="ducks" ng-model="hasDucks">Ducks
-						</form>
+					<div ng-show="watchesTelevision">
+						Which of these shows have you watched in the past week?
 						<p>
-						<div ng-show="hasDucks">
-							Ducks are the bane of my existence.
-						</div>
-						<div ng-show="hasMonkeys">
-							Monkeys make for excellent companions.
-						</div>
+							<input type="radio" value="manimal" ng-model="tvshow">Manimal<br>
+							<input type="radio" value="spiderman" ng-model="tvshow">The Amazing Spiderman
+						</p>
+						<p>
+							<div ng-show="tvshow">
+								<a href="{{tvshow == 'manimal' ? 
+								'https://www.youtube.com/watch?v=Ugb_TIpPoWA' : 
+								'https://www.youtube.com/watch?v=5Jls08MQiFA'}}">Here's a clip.</a>
+							</div>
 						</p>
 					</div>
 				</div>
@@ -99,7 +100,7 @@
 				<div class="list-group">
 					<a href="#musicQuestions" class="list-group-item">Music</a>
 					<a href="#filmQuestions" class="list-group-item">Film</a>
-					<a href="#animalsQuestions" class="list-group-item">Animals</a>
+					<a href="#televisionQuestions" class="list-group-item">Television</a>
 				</div>
 			</div> <!-- End of Sidebar -->
 		</div>
