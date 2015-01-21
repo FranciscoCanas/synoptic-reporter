@@ -30,20 +30,20 @@
 							<input type="radio" value="mariachi" ng-model="musicGenre">Mexican Mariachi 
 							<input type="radio" value="minstrel" ng-model="musicGenre">Banjo Minstrels 
 						</form>
+						<p>
+							<div ng-show="musicGenre == 'megaphone'">
+								<a href="https://www.youtube.com/watch?v=6PlhJOzH0gY">
+									Ah, the golden age of megaphone crooning!
+								</a>
+							</div>
+							<div ng-show="musicGenre == 'mariachi'">
+								Who can resist the irresistible force of the Mexican Mariachi band?
+							</div>
+							<div ng-show="musicGenre == 'minstrel'">
+								To each his own.
+							</div>
+						</p>
 					</div>
-					<p>
-						<div ng-show="musicGenre == 'megaphone'">
-							<a href="https://www.youtube.com/watch?v=6PlhJOzH0gY">
-								Ah, the golden age of megaphone crooning!
-							</a>
-						</div>
-						<div ng-show="musicGenre == 'mariachi'">
-							Who can resist the irresistible force of the Mexican Mariachi band?
-						</div>
-						<div ng-show="musicGenre == 'minstrel'">
-							To each his own.
-						</div>
-					</p>
 				</div>
 				<div id="filmQuestions">
 					<div>
