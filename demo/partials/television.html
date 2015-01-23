@@ -1,0 +1,21 @@
+<div id="televisionQuestions">
+	<div>
+		<p class="bg-primary">3. Television</p>
+		<p>Watch Television: <input type="checkbox" ng-model="watchesTelevision"></p>
+	</div>
+	<div ng-show="watchesTelevision">
+		Which of these shows have you watched in the past week?
+		<p>
+			<input type="radio" value="manimal" ng-model="tvshow">Manimal<br>
+			<input type="radio" value="spiderman" ng-model="tvshow">The Amazing Spiderman
+		</p>
+		<p>
+			<div ng-show="tvshow">
+				<!-- An example of using an angular template for logic inside a standard html attribute. -->
+				<a href="{{tvshow == 'manimal' ? 
+				'https://www.youtube.com/watch?v=Ugb_TIpPoWA' : 
+				'https://www.youtube.com/watch?v=5Jls08MQiFA'}}">Here's a clip.</a>
+			</div>
+		</p>
+	</div>
+</div>

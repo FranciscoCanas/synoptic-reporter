@@ -8,97 +8,19 @@
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-responsive.css">
 	<!-- Angular Dependencies-->
 	<script src="angular/angular.min.js"></script>
+
+	<script type="text/ng-template" id="sample.html">
+  		<div>This is my sample template</div>
+	</script>
 </head>
 <body>
 	<div class="container">
 		<div class="row row-offcanvas row-offcanvas-right">
 			<div class="col-xs-12 col-sm-9">
 				<!--MAIN PANE content-->
-				<div id="musicQuestions">
-					<p class="bg-primary">1. Music</p>
-					<p>Listen to Music:  
-						<input type="radio" value="yes" ng-model="listensToMusic">Yes
-						<input type="radio" value="no" ng-model="listensToMusic">No
-					</p>
-					<!-- The ng-show will display the below div if the expression inside the directive evaluates to true. However, if it later changes to false, the div will be hidden but its data maintained in memory. 
-
-					If we want to scrap the data completely when the div is hidden, we can use ng-if attribute instead.-->
-					<div ng-show="listensToMusic == 'yes'">
-						Which genre do you prefer?
-						<form>
-							<input type="radio" value="megaphone" ng-model="musicGenre">Megaphone Crooners 
-							<input type="radio" value="mariachi" ng-model="musicGenre">Mexican Mariachi 
-							<input type="radio" value="minstrel" ng-model="musicGenre">Banjo Minstrels 
-						</form>
-						<p>
-							<div ng-show="musicGenre == 'megaphone'">
-								<a href="https://www.youtube.com/watch?v=6PlhJOzH0gY">
-									Ah, the golden age of megaphone crooning!
-								</a>
-							</div>
-							<div ng-show="musicGenre == 'mariachi'">
-								Who can resist the irresistible force of the Mexican Mariachi band?
-							</div>
-							<div ng-show="musicGenre == 'minstrel'">
-								To each his own.
-							</div>
-						</p>
-					</div>
-				</div>
-				<div id="filmQuestions">
-					<div>
-						<p class="bg-primary">2. Film</p>
-						<p>Watch Film:
-							<input type="radio" value="yes" ng-model="watchesFilm">Yes
-							<input type="radio" value="no" ng-model="watchesFilm">No
-						</p>
-					</div>
-					<div ng-show="watchesFilm == 'yes'">
-						Which films have you watched? (select all that apply)
-						<form action="">
-							<input type="checkbox" value="" ng-model="watchedReefer">Reefer Madness (1936)<br>
-							<input type="checkbox" value="" ng-model="watchedPlan">Plan 9 From Outer Space (1959)<br>
-							<input type="checkbox" value="" ng-model="watchedManos">
-							Manos: The Hands of Fate (1966)<br>
-						</form>
-					</div>
-					<p>
-						<!-- A sample of the inline logic in directives -->
-						<div ng-show="watchedReefer && watchedManos && !watchedPlan">
-							You'd definitely enjoy Plan 9. Give it a chance.
-						</div>
-						<div ng-show="watchedReefer && !watchedManos && watchedPlan">
-							I keep hearing great things about Manos. Maybe you should watch it.
-						</div>
-						<div ng-show="watchedPlan && watchedManos && !watchedReefer">
-							Reefer is a classic! You should watch it.
-						</div>
-						<div ng-show="watchedPlan && watchedManos && watchedReefer">
-							A real film buff.
-						</div>
-					</p>
-				</div>
-				<div id="televisionQuestions">
-					<div>
-						<p class="bg-primary">3. Television</p>
-						<p>Watch Television: <input type="checkbox" ng-model="watchesTelevision"></p>
-					</div>
-					<div ng-show="watchesTelevision">
-						Which of these shows have you watched in the past week?
-						<p>
-							<input type="radio" value="manimal" ng-model="tvshow">Manimal<br>
-							<input type="radio" value="spiderman" ng-model="tvshow">The Amazing Spiderman
-						</p>
-						<p>
-							<div ng-show="tvshow">
-								<!-- An example of using an angular template for logic inside a standard html attribute. -->
-								<a href="{{tvshow == 'manimal' ? 
-								'https://www.youtube.com/watch?v=Ugb_TIpPoWA' : 
-								'https://www.youtube.com/watch?v=5Jls08MQiFA'}}">Here's a clip.</a>
-							</div>
-						</p>
-					</div>
-				</div>
+				<div ng-include="'partials/music.html'"></div>
+				<div ng-include="'partials/film.html'"></div>
+				<div ng-include="'partials/television.html'"></div>
 			</div> <!-- End of Main Pane -->
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 				<!--SIDE BAR Content-->
