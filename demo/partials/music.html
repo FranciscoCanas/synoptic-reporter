@@ -12,19 +12,20 @@ to the vars in the controller's scope.
 
 	If we want to scrap the data completely when the div is hidden, we can use ng-if attribute instead.-->
 	<div ng-show="$listensToMusic == 'yes'">
-		Pick a song:
+		<!--<div ng-include="'template/radio_inputs.hml'" ng-controller="musicController"></div>-->
+		{{radio.heading}}
 		<form>
-			<p ng-repeat="song in songs">
-				<input type="radio" value="{{song.id}}" ng-model="$parent.sel"> {{song.song}} by {{song.name}}
+			<p ng-repeat="choice in radio.choices">
+				<input type="radio" value="{{choice.id}}" ng-model="$parent.sel"> 
+				{{radio.display({item:choice})}}
 			</p>
 		</form>
 		<p>
 			<div ng-show="sel">
-				<a ng-href="https://www.youtube.com/watch?v={{songs[sel].url}}">
-					{{songs[sel].name}} on YouTube
+				<a ng-href="https://www.youtube.com/watch?v={{radio.choices[sel].url}}">
+					{{radio.choices[sel].name}} on YouTube
 				</a>
 			</div>
 		</p>
 	</div>
 </div>
-				
