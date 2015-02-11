@@ -1,4 +1,5 @@
-var synapp = angular.module('synoptic',[
+var synapp = angular.module(
+	'synoptic',[
 	'ngRoute',
 	'controllers'
 	]);
@@ -6,10 +7,6 @@ var synapp = angular.module('synoptic',[
 synapp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      // when('/music', {
-      //   templateUrl: 'partials/music.html',
-      //   controller: 'musicController'
-      // }).
       otherwise({
         redirectTo: '/'
       });

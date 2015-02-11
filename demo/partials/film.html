@@ -1,32 +1,25 @@
-<div id="filmQuestions">
+<div id="filmQuestions" ng-controller="filmController">
 	<div>
-		<p class="bg-primary">Film</p>
 		<p>Watch Film:
 			<input type="radio" value="yes" ng-model="watchesFilm">Yes
 			<input type="radio" value="no" ng-model="watchesFilm">No
 		</p>
 	</div>
 	<div ng-show="watchesFilm == 'yes'">
-		Which films have you watched? (select all that apply)
-		<form action="">
-			<input type="checkbox" value="" ng-model="watchedReefer">Reefer Madness (1936)<br>
-			<input type="checkbox" value="" ng-model="watchedPlan">Plan 9 From Outer Space (1959)<br>
-			<input type="checkbox" value="" ng-model="watchedManos">
-			Manos: The Hands of Fate (1966)<br>
-		</form>
-	</div>
+		<div ng-include="'templates/checkbox_inputs.html'"></div>
+ 	</div>
 	<p>
 		<!-- A sample of the inline logic in directives -->
-		<div ng-show="watchedReefer && watchedManos && !watchedPlan">
+		<div ng-show="checkbox.choices[0].on && checkbox.choices[2].on && !checkbox.choices[1].on">
 			You'd definitely enjoy Plan 9. Give it a chance.
 		</div>
-		<div ng-show="watchedReefer && !watchedManos && watchedPlan">
+		<div ng-show="checkbox.choices[0].on && !checkbox.choices[2].on && checkbox.choices[1].on">
 			I keep hearing great things about Manos. Maybe you should watch it.
 		</div>
-		<div ng-show="watchedPlan && watchedManos && !watchedReefer">
+		<div ng-show="checkbox.choices[1].on && checkbox.choices[2].on && !checkbox.choices[0].on">
 			Reefer is a classic! You should watch it.
 		</div>
-		<div ng-show="watchedPlan && watchedManos && watchedReefer">
+		<div ng-show="checkbox.choices[1].on && checkbox.choices[2].on && checkbox.choices[0].on">
 			A real film buff.
 		</div>
 	</p>
