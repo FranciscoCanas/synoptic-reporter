@@ -1,0 +1,9 @@
+<div ng-model="checkbox">
+{{checkbox.heading}}
+	<form>
+		<p ng-repeat="choice in checkbox.choices">
+			<input type="checkbox" value="{{choice.id}}" ng-model="choice.on">
+			{{checkbox.display({item:choice})}}
+		</p>
+	</form>
+</div>

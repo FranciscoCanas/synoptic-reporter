@@ -1,0 +1,9 @@
+<div id="category" ng-controller="mcategoryController">
+	<p>Intrathoracic Findings</p>
+	Suspicion of intrathoracic metastatic disease:
+	<input type="radio" value="no" ng-model="intrathoracic"> No
+	<input type="radio" value="yes" ng-model="intrathoracic"> Yes
+	<div ng-show="intrathoracic == 'yes'">
+		Identify which Nodes:
+	</div>
+</div>

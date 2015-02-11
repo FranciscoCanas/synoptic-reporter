@@ -13,21 +13,19 @@
 		<div class="row row-offcanvas row-offcanvas-right">
 			<div class="col-xs-12 col-sm-9">
 			<!--MAIN PANE content-->
+				<h3>CT Lung for Cancer Staging – Clinical Content </h3>
 				<!-- Bound sections to the index controller.-->
 				<div ng-repeat="section in sections">
-						<p class="bg-primary" indexed-template>{{$index + 1}}. {{section}}</p>
-						<div ng-include="'partials/' + section + '.html'"></div>
+						<p class="bg-primary" indexed-template>{{$index + 1}}. {{section.title}}</p>
+						<div ng-include="'partials/' + section.file + '.html'"></div>
 				</div>
 			</div> <!-- End of Main Pane -->
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 				<!--SIDE BAR Content-->
 				<div class="list-group">
 					<div ng-repeat="section in sections">
-						<a href="#{{section}}Questions" class="list-group-item">{{$index + 1}}. {{section}}</a>
+						<a href="#{{section.file}}Questions" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
 					</div>
-					<!-- <a href="#musicQuestions" class="list-group-item">Music</a>
-					<a href="#filmQuestions" class="list-group-item">Film</a>
-					<a href="#televisionQuestions" class="list-group-item">Television</a> -->
 				</div>
 			</div> <!-- End of Sidebar -->
 		</div>

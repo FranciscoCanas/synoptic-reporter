@@ -2,10 +2,51 @@ var controllers = angular.module('controllers', []);
 
 controllers.controller('indexController', function ($scope) {
 	$scope.sections = [
-		'music',
-		'film',
-		'television',
+		{
+			'title': 'Relevant Clinical Information',
+			'file': 'relevant-clinical-info',
+		},
+		{
+			'title': 'Protocols',
+			'file': 'protocols',
+		},
+		{
+			'title': 'T Category',
+			'file': 'tcategory',
+		},
+		{
+			'title': 'N Category',
+			'file': 'ncategory',
+		},
+		{
+			'title': 'M Category',
+			'file': 'mcategory',
+		},
+		{
+			'title': 'Film',
+			'file': 'film',
+		},
+		{
+			'title': 'Music',
+			'file': 'music',
+		},
+		{
+			'title': 'Television',
+			'file': 'television',
+		},
 	];
+});
+
+controllers.controller('protocolController', function ($scope) {
+});
+
+controllers.controller('tcategoryController', function ($scope) {
+});
+
+controllers.controller('ncategoryController', function ($scope) {
+});
+
+controllers.controller('mcategoryController', function ($scope) {
 });
 
 controllers.controller('musicController', function ($scope, $parse) {
@@ -31,7 +72,7 @@ controllers.controller('musicController', function ($scope, $parse) {
 				'url': 'h3yd-c91ww8'
 				},
 		]
-	}
+	};
 });
 
 controllers.controller('filmController', function ($scope, $parse) {
@@ -55,6 +96,6 @@ controllers.controller('filmController', function ($scope, $parse) {
 				'url': 'h3yd-c91ww8',
 				'on': false,
 				},
-		]
-	}
+		],
+	};
 });
