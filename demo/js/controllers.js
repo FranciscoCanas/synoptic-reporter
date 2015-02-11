@@ -23,16 +23,12 @@ controllers.controller('indexController', function ($scope) {
 			'file': 'mcategory',
 		},
 		{
-			'title': 'Film',
-			'file': 'film',
+			'title': 'Additional Findings',
+			'file': 'additionals',
 		},
 		{
-			'title': 'Music',
-			'file': 'music',
-		},
-		{
-			'title': 'Television',
-			'file': 'television',
+			'title': 'Conclusions/Recommendations',
+			'file': 'conclusions',
 		},
 	];
 });
@@ -47,6 +43,9 @@ controllers.controller('ncategoryController', function ($scope) {
 });
 
 controllers.controller('mcategoryController', function ($scope) {
+});
+
+controllers.controller('additionalController', function ($scope) {
 });
 
 controllers.controller('musicController', function ($scope, $parse) {

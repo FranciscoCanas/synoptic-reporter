@@ -1,0 +1,10 @@
+<div id="additionals" ng-controller="additionalsController">
+	Are there additional findings?
+	<input type="radio" value="no" ng-model="additional"> No
+	<input type="radio" value="yes" ng-model="additional"> Yes
+	<div ng-show="intrathoracic == 'yes'">
+		Check all that apply:
+	</div>
+	<p>Other Findings:</p>
+	<input type="text" ng-model="extra">
+</div>
