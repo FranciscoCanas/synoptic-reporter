@@ -2,8 +2,7 @@
 <html lang="en" ng-app="synoptic">
 <head>
 	<meta charset="utf-8">
-	<title>Angular UI Logic Demo</title>
-	
+	<title>Angular UI Logic Demo</title>	
 	<!-- Bootstrap Dependencies-->
 	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-responsive.css">
@@ -13,12 +12,13 @@
 		<div class="row row-offcanvas row-offcanvas-right">
 			<div class="col-xs-12 col-sm-9">
 			<!--MAIN PANE content-->
-				<h3>CT Lung for Cancer Staging – Clinical Content </h3>
+				<h3>{{title}}</h3>
 				<!-- Bound sections to the index controller.-->
 				<div ng-repeat="section in sections">
 						<p class="bg-primary" indexed-template>{{$index + 1}}. {{section.title}}</p>
 						<div ng-include="'partials/' + section.file + '.html'"></div>
 				</div>
+				<!-- <div ng-view></div> -->
 			</div> <!-- End of Main Pane -->
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
 				<!--SIDE BAR Content-->
@@ -30,11 +30,20 @@
 			</div> <!-- End of Sidebar -->
 		</div>
 	</div>
-	<!-- Angular Dependencies-->
+</body>
+<!-- Angular Dependencies-->
 	<script src="jquery/jquery-1.11.2.min.js"></script>
 	<script src="angular/angular.min.js"></script>
 	<script src="angular/angular-route.min.js"></script>
-	<script src="js/synapp.js"></script>
-	<script src="js/controllers.js"></script>
-</body>
+	<script src="js/app.js"></script>
+	<script src="js/controllers/controllers.js"></script>
+	<script src="js/controllers/index.js"></script>
+	<script src="js/controllers/protocols.js"></script>
+	<script src="js/controllers/relevant-clinical-info.js"></script>
+	<script src="js/controllers/ncategory.js"></script>
+	<script src="js/controllers/mcategory.js"></script>
+	<script src="js/controllers/tcategory.js"></script>
+	<script src="js/controllers/additionals.js"></script>
+	<script src="js/controllers/conclusions.js"></script>
+
 </html>

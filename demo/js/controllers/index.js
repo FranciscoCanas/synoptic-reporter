@@ -1,6 +1,5 @@
-var controllers = angular.module('controllers', []);
-
-controllers.controller('indexController', function ($scope) {
+angular.module('controllers').controller('indexController', function ($scope) {
+	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
 	$scope.sections = [
 		{
 			'title': 'Relevant Clinical Information',
@@ -9,11 +8,7 @@ controllers.controller('indexController', function ($scope) {
 		{
 			'title': 'Protocols',
 			'file': 'protocols',
-		},
-		{
-			'title': 'T Category',
-			'file': 'tcategory',
-		},
+		},		
 		{
 			'title': 'N Category',
 			'file': 'ncategory',
@@ -21,6 +16,10 @@ controllers.controller('indexController', function ($scope) {
 		{
 			'title': 'M Category',
 			'file': 'mcategory',
+		},
+		{
+			'title': 'T Category',
+			'file': 'tcategory',
 		},
 		{
 			'title': 'Additional Findings',
@@ -31,21 +30,6 @@ controllers.controller('indexController', function ($scope) {
 			'file': 'conclusions',
 		},
 	];
-});
-
-controllers.controller('protocolController', function ($scope) {
-});
-
-controllers.controller('tcategoryController', function ($scope) {
-});
-
-controllers.controller('ncategoryController', function ($scope) {
-});
-
-controllers.controller('mcategoryController', function ($scope) {
-});
-
-controllers.controller('additionalController', function ($scope) {
 });
 
 controllers.controller('musicController', function ($scope, $parse) {
