@@ -5,9 +5,17 @@
 	<div ng-show="suspicious_n_nodes == 'yes'">
 		Identify which Nodes:
 		<form class="form-horizontal">
-		<div ng-repeat="node in nodes">
-			{{node.label}}<input type="checkbox" class="form-control" ng-model="node.checked">
-		</div>
+			<div ng-repeat="node in nodes">
+				<div class="form-group">
+					<div class="col-xs-1">
+						<input type="checkbox" class="form-control" ng-mode="node.checked">
+					</div>
+					<label for="" class="control-label col-xs-5">{{node.label}}</label>
+					<div class="col-xs-6">
+						<input type="text" class="form-control" ng-model="node.text">
+					</div>	
+				</div>
+			</div>
 		</form>
 	</div>
 </div>
