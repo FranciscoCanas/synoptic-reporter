@@ -2,11 +2,11 @@ angular.module('controllers').controller('indexController', function ($scope) {
 	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
 	$scope.sections = [
 		{
-			'title': 'Relevant Clinical Information',
-			'file': 'relevant-clinical-info',
+			'title': 'Clinical Information',
+			'file': 'clinical-info',
 		},
 		{
-			'title': 'Protocols',
+			'title': 'Imaging Procedure Description',
 			'file': 'protocols',
 		},		
 		{

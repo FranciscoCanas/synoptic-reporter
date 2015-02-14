@@ -1,13 +1,15 @@
 <div id="protocols" ng-controller="protocolController">
-<p>
-	Overall Image Quality:  
-	<input type="radio" value="adequate" ng-model="quality"> Adequate
-	<input type="radio" value="suboptimal" ng-model="quality"> Suboptimal  
-	<input type="radio" value="non-diagnostic" ng-model="quality"> Non-diagnostic
-</p>
+		Overall Image Quality:  
+		<label class="radio-inline"><input type="radio" value="adequate" ng-model="quality"> Adequate</label>
+		<label class="radio-inline"><input type="radio" value="suboptimal" ng-model="quality"> Suboptimal</label>  
+		<label class="radio-inline"><input type="radio" value="non-diagnostic" ng-model="quality"> Non-diagnostic</label>
 	<p>
-	Intravenous Contrast Used?
-	<input type="radio" value="no" ng-model="contrast_used">No
-	<input type="radio" value="yes" ng-model="contrast_used">Yes
+		Intravenous Contrast Used?
+		<label class="radio-inline"><input type="radio" value="no" ng-model="contrast_used">No</label>
+		<label class="radio-inline"><input type="radio" value="yes" ng-model="contrast_used">Yes</label>
+	</p>
+	<p>
+		Enter Additional Info:
+		<input type="text" ng-model="additional_info" class="form-control">
 	</p>
 </div>
