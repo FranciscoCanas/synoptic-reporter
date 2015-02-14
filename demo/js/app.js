@@ -7,29 +7,29 @@ var app = angular.module(
 /* 
 / Routing used with single view pagination.
 */
-// app.config(['$routeProvider',
-//   function($routeProvider) {
-//     $routeProvider.
-//       when('/', {
-//         templateUrl: 'partials/relevant-clinical-info.html',
-//         controller: 'js/controllers/relevant-clinical-infoController'
-//       }).
-//       when('/relevant-clinical-info', {
-//         templateUrl: 'partials/relevant-clinical-info.html',
-//         controller: 'js/controllers/relevant-clinical-infoController'
-//       }).
-//       when('/protocols', {
-//         templateUrl: 'partials/protocols.html',
-//         controller: 'js/controllers/protocolsController'
-//       }).
-//       when('/ncategory', {
-//         templateUrl: 'partials/ncategory.html',
-//         controller: 'js/controllers/ncategoryController'
-//       }).
-//       otherwise({
-//         redirectTo: '/relevant-clinical-info'
-//       });
-//   }]);
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider.
+      when('/', {
+        templateUrl: 'partials/relevant-clinical-info.html',
+        controller: 'relevant-clinical-info'
+      }).
+      when('/relevant-clinical-info', {
+        templateUrl: 'partials/relevant-clinical-info.html',
+        controller: 'relevant-clinical-infoController'
+      }).
+      when('/protocols', {
+        templateUrl: 'partials/protocols.html',
+        controller: 'protocolsController'
+      }).
+      when('/ncategory', {
+        templateUrl: 'partials/ncategory.html',
+        controller: 'ncategoryController'
+      }).
+      otherwise({
+        redirectTo: '/relevant-clinical-info'
+      });
+  }]);
 
 /*
 Replaces the ng-include element with the template in its src.
