@@ -1,0 +1,22 @@
+<div id="impressions" ng-controller="impressionsController">
+	<p>
+	Impressions/Summary:
+	<input type="text" class="form-control col-xs-6" ng-model="extra">
+	</p>
+	<p>
+	Radiologic Staging (TNM Version):
+	<form class="form-horizontal">
+			<div ng-repeat="finding in findings">
+				<div class="form-group">
+					<div class="col-xs-1">
+						<input type="checkbox" class="form-control" ng-mode="finding.checked">
+					</div>
+					<label class="control-label col-xs-4">{{$index+1}}) {{finding.label}}</label>
+					<div class="col-xs-6">
+						<input type="text" class="form-control" ng-model="finding.text">
+					</div>	
+				</div>
+			</div>
+	</form>
+	</p>
+</div>

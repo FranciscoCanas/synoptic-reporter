@@ -8,7 +8,11 @@ angular.module('controllers').controller('indexController', function ($scope) {
 		{
 			'title': 'Imaging Procedure Description',
 			'file': 'protocols',
-		},		
+		},
+		{
+			'title': 'T Category',
+			'file': 'tcategory',
+		},
 		{
 			'title': 'N Category',
 			'file': 'ncategory',
@@ -18,16 +22,12 @@ angular.module('controllers').controller('indexController', function ($scope) {
 			'file': 'mcategory',
 		},
 		{
-			'title': 'T Category',
-			'file': 'tcategory',
-		},
-		{
 			'title': 'Additional Findings',
-			'file': 'additionals',
+			'file': 'additional',
 		},
 		{
-			'title': 'Conclusions/Recommendations',
-			'file': 'conclusions',
+			'title': 'Impressions',
+			'file': 'impressions',
 		},
 	];
 });
