@@ -79,6 +79,7 @@
 			<div ng-repeat="structure in structures">
 				<div class="form-group">
 					<div class="col-xs-3">
+					<div ng-init="structure.status = 'normal'"/>
 						<input type="radio" value="normal" ng-model="structure.status"> Normal
 						<input type="radio" value="abnormal" ng-model="structure.status"> Abnormal
 					</div>
