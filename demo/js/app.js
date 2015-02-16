@@ -11,7 +11,7 @@ app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        redirectTo: '/relevant-clinical-info'
+        redirectTo: '/clinical-info'
       }).
       when('/clinical-info', {
         templateUrl: 'partials/clinical-info.html',

@@ -11,3 +11,14 @@ h5 {
 	text-decoration: underline;
 	font-weight: bold;
 }
+
+#sidebar-wrapper {
+	position: fixed;
+	left: 0px;
+	width: 22%;
+}
+
+#page-content-wrapper {
+  width: 78%;
+  left: 20%;
+}
