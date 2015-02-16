@@ -1,10 +1,114 @@
 <div id="tcategory" ng-controller="tcategoryController">
-	<input type="radio" value="peripheral" ng-model="location">
-	Peripheral
-	<input type="radio" value="central" ng-model="location">
-	Central
-	<div ng-show="location == 'central'">
-		What is the distance from the mass to the carina?
-		<input type="text" ng-model="dist_carina">
-	</div>
+	<ol>
+		<li>
+			<h5>Location of Main Nodule/Mass (Primary tumor, or Reference tumor)</h5>
+			<p>
+				Location of main nodule/mass:
+				<input type="radio" value="peripheral" ng-model="location">
+				Peripheral
+				<input type="radio" value="central" ng-model="location">
+				Central
+			</p>
+			<div ng-show="location == 'central'">
+				<form>
+					State if there is main stem bronchus involvement, and describe:
+					<input type="text" class="form-control" ng-model="bronchus_involvement">
+				</form>
+				<br>
+				<form class="form-inline">
+					<label class="control-label">What is the distance from the mass to the carina?</label>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="dist_to_carina">
+						<div class="input-group-addon">mm</div>
+					</div>
+				</form>
+			</div>
+			<div ng-show="location == 'peripheral'">
+				<form>
+					State the lobe(s) and segment(s) where the mass is located:
+					<input type="text" class="form-control" ng-model="lobe_segment">
+				</form>
+			</div>
+		</li>
+		<li>
+			<h5>Size and characteristics of main nodule/mass</h5>
+			<form class="form-inline">
+					<label class="control-label"> Plane in which it was measured:</label>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="plain_measured">
+					</div>
+			</form>
+			<form>
+				Is mass solid?
+				<input type="radio" value="solid" ng-model="solidity">
+				Solid
+				<input type="radio" value="part-solid" ng-model="solidity">
+				Part-solid
+			</form>
+			<div ng-show="solidity == 'solid'">
+				<form class="form-inline">
+					<label class="control-label">Size of mass:</label>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="size_of_mass">
+						<div class="input-group-addon">mm</div>
+					</div>
+				</form>
+			</div>
+			<div ng-show="solidity == 'part-solid'">
+				<form class="form-inline">
+					<label class="control-label">Total size of lesion:</label>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="size_of_lesion">
+						<div class="input-group-addon">mm</div>
+					</div>
+					<label class="control-label">Size of solid component:</label>
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="size_of_solid">
+						<div class="input-group-addon">mm</div>
+					</div>
+				</form>
+			</div>
+			<form>
+				Characteristics of the main nodule/mass:
+				<input type="text" class="form-control" ng-model="characteristics">
+			</form>
+		</li>
+		<li>
+			<h5>Structures directly involved</h5>
+			<form class="form-horizontal">
+			<div ng-repeat="structure in structures">
+				<div class="form-group">
+					<div class="col-xs-3">
+						<input type="radio" value="normal" ng-model="structure.status"> Normal
+						<input type="radio" value="abnormal" ng-model="structure.status"> Abnormal
+					</div>
+					<label class="control-label col-xs-3">{{$index+1}}) {{structure.label}}</label>
+					<div class="col-xs-6" ng-show="structure.status == 'abnormal'">
+						<input type="text" class="form-control" ng-model="node.text">
+					</div>	
+				</div>
+			</div>
+		</form>
+		Are there additional suspicious pulmonary nodules?
+		<input type="radio" value="yes" ng-model="additional_nodules">
+		Yes
+		<input type="radio" value="no" ng-model="additional_nodules">
+		No
+		<div ng-show="additional_nodules == 'yes'">
+			<form class="form-horizontal">
+			<div ng-repeat="node in nodules">
+				<div class="form-group">
+					<div class="col-xs-1">
+						<input type="checkbox" class="form-control" ng-model="node.selected">
+					</div>
+					<label class="control-label col-xs-4">{{$index+1}}) {{node.label}}</label>
+					<div class="col-xs-7" ng-show="node.selected">
+						<input type="text" class="form-control" ng-model="node.text">
+					</div>	
+				</div>
+			</div>
+		</form>
+		</div>
+		</li>
+	</ol>
 </div>

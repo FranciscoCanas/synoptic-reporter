@@ -9,10 +9,10 @@
 			<div ng-repeat="node in nodes">
 				<div class="form-group">
 					<div class="col-xs-1">
-						<input type="checkbox" class="form-control" ng-mode="node.checked">
+						<input type="checkbox" class="form-control" ng-model="node.selected">
 					</div>
 					<label class="control-label col-xs-5">{{$index+1}}) {{node.label}}</label>
-					<div class="col-xs-6">
+					<div class="col-xs-6" ng-show="node.selected">
 						<input type="text" class="form-control" ng-model="node.text">
 					</div>	
 				</div>

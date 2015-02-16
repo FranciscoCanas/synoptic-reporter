@@ -11,6 +11,14 @@
 <body>
 	<div class="container" ng-controller="indexController">
 		<div class="row row-offcanvas row-offcanvas-right">
+		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+				<!--SIDE BAR Content-->
+				<div class="list-group">
+					<div ng-repeat="section in sections">
+						<a href="#{{section.file}}Questions" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
+					</div>
+				</div>
+			</div> <!-- End of Sidebar -->
 			<div class="col-xs-12 col-sm-9">
 			<!--MAIN PANE content-->
 				<h3>{{title}}</h3>
@@ -22,14 +30,6 @@
 				</div>
 				<!-- <div ng-view></div> -->
 			</div> <!-- End of Main Pane -->
-			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-				<!--SIDE BAR Content-->
-				<div class="list-group">
-					<div ng-repeat="section in sections">
-						<a href="#{{section.file}}Questions" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
-					</div>
-				</div>
-			</div> <!-- End of Sidebar -->
 		</div>
 	</div>
 </body>
