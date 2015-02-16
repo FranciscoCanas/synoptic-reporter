@@ -1,4 +1,4 @@
-angular.module('controllers').controller('ncategoryController', function ($scope) {
+angular.module('controllers').controller('ncategoryController', function ($scope, ncatSrv) {
 	$scope.nodes = [
 		{'label':'Suspicious N1 Nodes'},
 		{'label':'Suspicious Prevascular (3a) lymph node'},
@@ -7,4 +7,7 @@ angular.module('controllers').controller('ncategoryController', function ($scope
 		{'label':'Suspicious N3 Nodes'},
 		{'label':'Other Nodes (axilla,sub-diaphragmatic)'}
 	]
+
+	$scope.catdata = tcatSrv;
+	$scope.catdata.structures = $scope.nodes;
 });

@@ -4,6 +4,20 @@ var app = angular.module(
 	 'ngRoute',    // Routing dependencies
 	 'controllers' // Controllers module
 	]);
+
+// Services for data shared across form sections.
+app.service('mcatSrv', function () {
+    return {};
+})
+
+app.service('ncatSrv', function () {
+    return {};
+})
+
+app.service('tcatSrv', function () {
+    return {};
+})
+
 /* 
 / Routing used with single view pagination.
 */

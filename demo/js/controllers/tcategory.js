@@ -1,4 +1,4 @@
-angular.module('controllers').controller('tcategoryController', function ($scope) {
+angular.module('controllers').controller('tcategoryController', function ($scope, tcatSrv) {
 	$scope.structures = [
 		{'label': 'Pleura'},
 		{'label': 'Brachial Plexus'},
@@ -19,5 +19,9 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 		{'label':'In a different lobe, same lung'},
 		{'label':'In the opposite lung (M1a)'},
 	];
+
+	$scope.catdata = tcatSrv;
+	$scope.catdata.structures = $scope.structures;
+	$scope.catdata.nodules = $scope.nodules;
 });
 
