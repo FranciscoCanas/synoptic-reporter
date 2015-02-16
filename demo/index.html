@@ -15,7 +15,9 @@
 				<!--SIDE BAR Content-->
 				<div class="list-group">
 					<div ng-repeat="section in sections">
-						<a href="#{{section.file}}Questions" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
+						<a ng-click="goToHash(section.file)" href="" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
+						<!-- For testing with pagination:
+						<a href="#{{section.file}}" class="list-group-item">{{$index + 1}}. {{section.title}}</a> -->
 					</div>
 				</div>
 			</div> <!-- End of Sidebar -->
@@ -23,12 +25,12 @@
 			<!--MAIN PANE content-->
 				<h3>{{title}}</h3>
 				<!-- Bound sections to the index controller.-->
-				<div ng-repeat="section in sections">
+				<div id="{{section.file}}" ng-repeat="section in sections">
 						<p class="bg-primary" indexed-template>{{$index + 1}}. {{section.title}}</p>
-						<div ng-include="'partials/' + section.file + '.html'"></div>
+							<div ng-include="'partials/' + section.file + '.html'"></div>
 						<br>
 				</div>
-				<!-- <div ng-view></div> -->
+				<!-- For testing with pagination: <div ng-view></div> -->
 			</div> <!-- End of Main Pane -->
 		</div>
 	</div>

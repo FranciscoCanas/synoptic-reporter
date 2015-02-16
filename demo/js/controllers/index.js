@@ -1,4 +1,13 @@
-angular.module('controllers').controller('indexController', function ($scope) {
+angular.module('controllers').controller('indexController', function ($scope, $location, $anchorScroll) {
+	$scope.goToHash = function(x) {
+      // set the location.hash to the id of
+      // the element you wish to scroll to.
+      console.log(x);
+      $location.hash(x);
+      // call $anchorScroll()
+      $anchorScroll();
+    };
+
 	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
 	$scope.sections = [
 		{
@@ -32,7 +41,7 @@ angular.module('controllers').controller('indexController', function ($scope) {
 	];
 });
 
-controllers.controller('musicController', function ($scope, $parse) {
+angular.module('controllers').controller('musicController', function ($scope, $parse) {
 	$scope.radio = {
 		'heading': 'Favourite Song',
 		'display': $parse('item.song + \' by \' + item.name'),
@@ -58,7 +67,7 @@ controllers.controller('musicController', function ($scope, $parse) {
 	};
 });
 
-controllers.controller('filmController', function ($scope, $parse) {
+angular.module('controllers').controller('filmController', function ($scope, $parse) {
 	$scope.checkbox = {
 		'heading': 'Have you watched any of the following films?',
 		'display': $parse('item.film'),

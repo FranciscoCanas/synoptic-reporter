@@ -11,12 +11,11 @@ app.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
       when('/', {
-        templateUrl: 'partials/relevant-clinical-info.html',
-        controller: 'relevant-clinical-info'
+        redirectTo: '/relevant-clinical-info'
       }).
-      when('/relevant-clinical-info', {
-        templateUrl: 'partials/relevant-clinical-info.html',
-        controller: 'relevant-clinical-infoController'
+      when('/clinical-info', {
+        templateUrl: 'partials/clinical-info.html',
+        controller: 'clinical-infoController'
       }).
       when('/protocols', {
         templateUrl: 'partials/protocols.html',
@@ -25,6 +24,22 @@ app.config(['$routeProvider',
       when('/ncategory', {
         templateUrl: 'partials/ncategory.html',
         controller: 'ncategoryController'
+      }).
+      when('/mcategory', {
+        templateUrl: 'partials/mcategory.html',
+        controller: 'mcategoryController'
+      }).
+      when('/tcategory', {
+        templateUrl: 'partials/tcategory.html',
+        controller: 'tcategoryController'
+      }).
+      when('/additional', {
+        templateUrl: 'partials/additional.html',
+        controller: 'additionalController'
+      }).
+      when('/impressions', {
+        templateUrl: 'partials/impressions.html',
+        controller: 'impressionsController'
       }).
       otherwise({
         redirectTo: '/relevant-clinical-info'
