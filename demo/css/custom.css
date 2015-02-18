@@ -1,8 +1,29 @@
+
+/* Input forms*/
 .form-horizontal .control-label{
 	text-align:left;
     font-weight: normal;
 }
 
+/*Fix position of the navigation menu.*/
+#sidebar-wrapper {
+	position: fixed;
+	left: 0px;
+	width: 22%;
+}
+
+/*Sets the dimensions for the main viewport.*/
+#page-content-wrapper {
+  width: 78%;
+  left: 20%;
+}
+
+/*Add a blank margin to the bottom of index page.*/
+#footer {
+	padding-bottom: 150px;
+}
+
+/* Override bootstrap's CSS for the following elements:*/
 label {
 	font-weight: normal;	
 }
@@ -10,15 +31,4 @@ label {
 h5 {
 	text-decoration: underline;
 	font-weight: bold;
-}
-
-#sidebar-wrapper {
-	position: fixed;
-	left: 0px;
-	width: 22%;
-}
-
-#page-content-wrapper {
-  width: 78%;
-  left: 20%;
 }

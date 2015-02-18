@@ -8,6 +8,6 @@ angular.module('controllers').controller('ncategoryController', function ($scope
 		{'label':'Other Nodes (axilla,sub-diaphragmatic)'}
 	]
 
-	$scope.catdata = tcatSrv;
+	$scope.catdata = ncatSrv;
 	$scope.catdata.structures = $scope.nodes;
 });

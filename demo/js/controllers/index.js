@@ -1,10 +1,28 @@
-angular.module('controllers').controller('indexController', function ($scope, $location, $anchorScroll) {
-	$scope.goToHash = function(x) {
-		$location.hash(x);
-		$anchorScroll();
+angular.module('controllers').controller('indexController', function ($scope, $location, $anchorScroll, $document) {
+	/* Scrolls to specified section id. */
+	$scope.goToSection = function(id) {
+		$location.replace(); // Replace hash, instead of append.
+		$location.hash(id);  // Set url hash to given id.
+		$anchorScroll();	 // Scroll to current hash.
 	};
 
+	$document.ready(function () {
+        console.log('Document Loaded');
+        /*
+		* Center all input fields when user focuses on them.
+		*/
+		$(':input').focus(function(){
+			var center = $(window).height() / 2;
+			var top = $(this).offset().top ;
+			if (top > center){
+				$(window).scrollTop(top - center);
+			}
+		});
+    });
+
 	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
+
+	/* Ordered list sections */
 	$scope.sections = [
 	{
 		'title': 'Clinical Information',

@@ -16,7 +16,7 @@
 				<div class="list-group sidebar-nav">
 					<a ng-click="goToHash('title')" href="" class="list-group-item">Home</a>
 					<div ng-repeat="section in sections">
-						<a ng-click="goToHash(section.file)" href="" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
+						<a ng-click="goToSection(section.file)" href="" class="list-group-item">{{$index + 1}}. {{section.title}}</a>
 						<!-- For testing with pagination:
 						<a href="#{{section.file}}" class="list-group-item">{{$index + 1}}. {{section.title}}</a> -->
 					</div>
@@ -33,6 +33,7 @@
 					<div ng-include="'partials/' + section.file + '.html'"></div>
 					<br>
 				</div>
+				<div id="footer"/>
 				<!-- For testing with pagination: <div ng-view></div> -->
 			</div> <!-- End of Main Pane -->
 		</div>
