@@ -1,4 +1,8 @@
 
+.section-title {
+	font-weight: bold;
+}
+
 /* Input forms*/
 .form-horizontal .control-label{
 	text-align:left;
@@ -31,4 +35,18 @@ label {
 h5 {
 	text-decoration: underline;
 	font-weight: bold;
+}
+
+input
+{ 
+    /*padding: 1px;*/
+}
+
+li {
+	padding: 5px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0px;
 }

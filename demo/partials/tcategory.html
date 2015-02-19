@@ -2,88 +2,148 @@
 	<ol>
 		<li>
 			<h5>Location of Main Nodule/Mass (Primary tumor, or Reference tumor)</h5>
-			<p>
-				Location of main nodule/mass:
-				<input type="radio" value="peripheral" ng-model="location">
-				Peripheral
-				<input type="radio" value="central" ng-model="location">
-				Central
-			</p>
-			<div ng-show="location == 'central'">
-				<form>
-					State if there is main stem bronchus involvement, and describe:
-					<input type="text" class="form-control" ng-model="bronchus_involvement">
-				</form>
-				<br>
-				<form class="form-inline">
-					<label class="control-label">What is the distance from the mass to the carina?</label>
-					<div class="input-group">
-						<input type="text" class="form-control" ng-model="dist_to_carina">
-						<div class="input-group-addon">mm</div>
-					</div>
-				</form>
-			</div>
-			<div ng-show="location == 'peripheral'">
-				<form>
-					State the lobe(s) and segment(s) where the mass is located:
-					<input type="text" class="form-control" ng-model="lobe_segment">
-				</form>
-			</div>
+			<ol>
+				<li>
+					Location of main nodule/mass:
+					<input type="radio" value="peripheral" ng-model="location">
+					Peripheral
+					<input type="radio" value="central" ng-model="location">
+					Central*
+				</li>
+				<div ng-show="location == 'central'">
+					<ol>
+						<li>
+							<form>
+								State if there is main stem bronchus involvement, and describe:
+								<input type="text" class="form-control" ng-model="bronchus_involvement">
+							</form>
+						</li>
+						<li>
+							<form class="form-inline">
+								<label class="control-label">What is the distance from the mass to the carina?</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control input-sm" ng-model="dist_to_carina">
+									<div class="input-group-addon">mm</div>
+								</div>
+								<label class="control-label">Series:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="dist_to_carina_series">
+								</div>
+								<label class="control-label">Image:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="dist_to_carina_image">
+								</div>
+							</form>
+						</li>
+					</ol>
+				</div>
+
+				<div ng-show="location == 'peripheral'">
+					<li>
+						<form>
+							State the lobe(s) and segment(s) where the mass is located:
+							<input type="text" class="form-control" ng-model="lobe_segment">
+						</form>
+					</li>
+				</div>
+
+			</ol>
 		</li>
 		<li>
 			<h5>Size and characteristics of main nodule/mass</h5>
-			<form class="form-inline">
-				<label class="control-label"> Plane in which it was measured:</label>
-				<div class="input-group">
-					<input type="text" class="form-control" ng-model="plain_measured">
-				</div>
-			</form>
-			<form>
-				Is mass solid?
-				<input type="radio" value="solid" ng-model="solidity">
-				Solid
-				<input type="radio" value="part-solid" ng-model="solidity">
-				Part-solid
-			</form>
-			<div ng-show="solidity == 'solid'">
-				<form class="form-inline">
-					<label class="control-label">Size of mass:</label>
-					<div class="input-group">
-						<input type="text" class="form-control" ng-model="size_of_mass">
-						<div class="input-group-addon">mm</div>
-					</div>
-				</form>
-			</div>
-			<div ng-show="solidity == 'part-solid'">
-				<form class="form-inline">
-					<label class="control-label">Total size of lesion:</label>
-					<div class="input-group">
-						<input type="text" class="form-control" ng-model="size_of_lesion">
-						<div class="input-group-addon">mm</div>
-					</div>
-					<label class="control-label">Size of solid component:</label>
-					<div class="input-group">
-						<input type="text" class="form-control" ng-model="size_of_solid">
-						<div class="input-group-addon">mm</div>
-					</div>
-				</form>
-			</div>
-			<form>
-				Characteristics of the main nodule/mass:
-				<input type="text" class="form-control" ng-model="characteristics">
-			</form>
+			<ol>
+				<li>
+					<form class="form-inline">
+						<label class="control-label"> Plane in which it was measured:</label>
+						<div class="input-group">
+							<input type="text" class="form-control" ng-model="plain_measured">
+						</div>
+					</form>
+				</li>
+				<li>
+					<p>Size of the Nodule/Mass:</p>
+					<ul>
+						<li>
+							<form class="form-inline">
+								<input type="checkbox" class="col-sm-1" ng-model="solid"/>
+								<label class="control-label col-sm-2">Solid Nodule/Mass:</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control input-sm" ng-model="solid_size">
+									<div class="input-group-addon">mm</div>
+								</div>
+								<label class="control-label">Series:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="solid_series">
+								</div>
+								<label class="control-label">Image:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="solid_image">
+								</div>
+							</form>
+						</li>
+						<li>
+							<form class="form-inline">
+								<input type="checkbox"  class="col-sm-1" ng-model="solid"/>
+								<label class="control-label col-sm-2">Part-solid Nodule/Mass:</label>
+								<ul>
+								<li>
+								<label class="control-label col-sm-3">Total size of lesion:</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control input-sm" ng-model="part_solid_total_size">
+									<div class="input-group-addon">mm</div>
+								</div>
+								</li>
+								<li>
+								<div class="col-sm-3"/>
+
+								<label class="control-label col-sm-3">Size of solid component:</label>
+								<div class="input-group col-sm-2">
+									<input type="text" class="form-control input-sm" ng-model="part_solid_solid_size">
+									<div class="input-group-addon">mm</div>
+								</div>
+								</li>
+								<li>
+								<div class="col-sm-3"/>
+								<label class="control-label">Series:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="part_solid_series">
+								</div>
+								<label class="control-label">Image:</label>
+								<div class="input-group col-sm-1">
+									<input type="text" class="form-control input-sm" ng-model="part_solid_image">
+								</div>
+								</li>
+								</ul>
+							</form>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<form>
+						Characteristics of the main nodule/mass:
+						<input type="text" class="form-control" ng-model="characteristics">
+					</form>
+				</li>
+			</ol>
 		</li>
 		<li>
 			<h5>Structures directly involved</h5>
-			<form class="form-horizontal">
+			<p>
+				Is there involvement of any other anatomical structures:
+				<input type="radio" value="yes" ng-model="anatomical_structures">
+				Yes
+				<input type="radio" value="no" ng-model="anatomical_structures">
+				No
+			</p>
+			<form class="form-horizontal" ng-show="anatomical_structures == 'yes'">
 				<div ng-repeat="structure in structures">
 					<div class="form-group">
+						<label class="control-label col-xs-3">{{$index+1}}) {{structure.label}}</label>
 						<div class="col-xs-3">
 							<div ng-init="structure.status = 'normal'"/>
 							<input type="radio" value="normal" ng-model="structure.status"> Normal
 							<input type="radio" value="abnormal" ng-model="structure.status"> Abnormal
 						</div>
-						<label class="control-label col-xs-3">{{$index+1}}) {{structure.label}}</label>
 						<div class="col-xs-6" ng-show="structure.status == 'abnormal'">
 							<input type="text" class="form-control" ng-model="node.text">
 						</div>	
@@ -99,10 +159,10 @@
 				<form class="form-horizontal">
 					<div ng-repeat="node in nodules">
 						<div class="form-group">
+							<label class="control-label col-xs-4">{{$index+1}}) {{node.label}}</label>
 							<div class="col-xs-1">
 								<input type="checkbox" class="form-control" ng-model="node.selected">
 							</div>
-							<label class="control-label col-xs-4">{{$index+1}}) {{node.label}}</label>
 							<div class="col-xs-7" ng-show="node.selected">
 								<input type="text" class="form-control" ng-model="node.text">
 							</div>	

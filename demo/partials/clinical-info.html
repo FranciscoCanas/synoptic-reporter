@@ -1,6 +1,21 @@
 <div id="clinical-info">
+<ol>
+	<li>
 	Patient Clinical Information:
 	<input type="text" class="form-control" ng-model="clinical_info">
-	Previous Examination (Date and Modality):
-	<input type="text" class="form-control" ng-model="previous_examination">
+	</li>
+	<!-- Make this smaller: -->
+	<li>
+	<form class="form-inline">
+		<label class="control-label">Previous Examination Date:</label>
+		<div class="input-group col-sm-1">
+			<input type="text" class="form-control input-sm" ng-model="date">
+		</div>
+		<label class="control-label">Modality:</label>
+		<div class="input-group col-sm-1">
+			<input type="text" class="form-control input-sm" ng-model=	"modality">
+		</div>
+	</form>
+	</li>
+</ol>
 </div>

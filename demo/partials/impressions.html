@@ -6,6 +6,7 @@
 	<p>
 		Radiologic Staging (TNM Version):
 		<form class="form-horizontal">
+			<!-- This needs to be encoded into radio buttons -->
 				<div ng-repeat="finding in findings">
 					<div class="form-group">
 						<label class="control-label col-xs-4">{{$index+1}}) {{finding.label}}</label>

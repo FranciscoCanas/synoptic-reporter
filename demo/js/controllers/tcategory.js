@@ -11,7 +11,7 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 		{'label': 'Esophagus'},
 		{'label': 'Trachea esophageal groove'},
 		{'label': 'Vertebral Body'},
-		{'label': 'hest wall & Ribs'},
+		{'label': 'Chest wall & Ribs'},
 	];
 
 	$scope.nodules=[

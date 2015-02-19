@@ -7,20 +7,24 @@ angular.module('controllers').controller('indexController', function ($scope, $l
 	};
 
 	$document.ready(function () {
-        console.log('Document Loaded');
+		console.log('Document Loaded');
         /*
 		* Center all input fields when user focuses on them.
 		*/
 		$(':input').focus(function(){
+			var ele = $(this);
 			var center = $(window).height() / 2;
 			var top = $(this).offset().top ;
+			ele.attr('test','la');
+			console.log(ele.attr('class'));
 			if (top > center){
 				$(window).scrollTop(top - center);
 			}
 		});
-    });
+	});
 
 	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
+	$scope.description = "Patient with high suspicion of cancer as per the PEBC document or radiological/laboratory tests suggesting cancer. Excluding: patients with synchronous lung primary, previous diagnosis of lung cancer, lung cancer surgery or therapy. New single lung primary only.";
 
 	/* Ordered list sections */
 	$scope.sections = [
