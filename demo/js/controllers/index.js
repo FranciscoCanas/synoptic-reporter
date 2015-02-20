@@ -37,20 +37,28 @@ angular.module('controllers').controller('indexController', function ($scope, $l
 		'file': 'protocols',
 	},
 	{
+		'title': 'Findings',
+		'file': 'findings'
+	},
+	{
 		'title': 'T Category',
 		'file': 'tcategory',
+		'is_subsection': true,
 	},
 	{
 		'title': 'N Category',
 		'file': 'ncategory',
+		'is_subsection': true,
 	},
 	{
 		'title': 'M Category',
 		'file': 'mcategory',
+		'is_subsection': true,
 	},
 	{
 		'title': 'Additional Findings',
 		'file': 'additional',
+		'is_subsection': true,
 	},
 	{
 		'title': 'Impressions',

@@ -1,21 +1,21 @@
-<div id="clinical-info">
-<ol>
-	<li>
-	Patient Clinical Information:
-	<input type="text" class="form-control" ng-model="clinical_info">
-	</li>
-	<!-- Make this smaller: -->
-	<li>
-	<form class="form-inline">
-		<label class="control-label">Previous Examination Date:</label>
-		<div class="input-group col-sm-1">
-			<input type="text" class="form-control input-sm" ng-model="date">
-		</div>
-		<label class="control-label">Modality:</label>
-		<div class="input-group col-sm-1">
-			<input type="text" class="form-control input-sm" ng-model=	"modality">
-		</div>
-	</form>
-	</li>
-</ol>
+<div id="clinical-info" ng-controller="clinical-infoController">
+	<ol>
+		<li>
+			Patient Clinical Information:
+			<textarea type="textarea" rows="5" class="form-control" ng-model="clinical_info"></textarea>
+		</li>
+		<!-- Make this smaller: -->
+		<li>
+			<form class="form-inline">
+				<label class="control-label">Previous Examination Date:</label>
+				<div class="input-group col-sm-1">
+					<input type="text" class="form-control input-sm" ng-model="date">
+				</div>
+				<label class="control-label">Modality:</label>
+				<div class="input-group col-sm-1">
+					<input type="text" class="form-control input-sm" ng-model=	"modality">
+				</div>
+			</form>
+		</li>
+	</ol>
 </div>

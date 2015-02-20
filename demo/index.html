@@ -11,7 +11,7 @@
 <body>
 	<div class="container" ng-controller="indexController">
 		<div class="row row-offcanvas row-offcanvas-right">
-		<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-wrapper">
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-wrapper">
 				<!--SIDE BAR Content-->
 				<div class="list-group sidebar-nav">
 					<div ng-repeat="section in sections">
@@ -27,11 +27,11 @@
 					<h3>{{title}}</h3>
 				</div>
 				<div id="description">
-				<p>{{description}}</p>
+					<p>{{description}}</p>
 				</div>
 				<!-- Bound sections to the index controller.-->
 				<div id="{{section.file}}" ng-repeat="section in sections">
-					<p class="bg-primary section-title" indexed-template>{{section.title}}</p>
+					<p class="bg-primary section-title" ng-show="!section.is_subsection" indexed-template>{{section.title}}</p>
 					<div ng-include="'partials/' + section.file + '.html'"></div>
 					<br>
 				</div>
@@ -49,7 +49,7 @@
 <script src="js/controllers/controllers.js"></script>
 <script src="js/controllers/index.js"></script>
 <script src="js/controllers/protocols.js"></script>
-<script src="js/controllers/relevant-clinical-info.js"></script>
+<script src="js/controllers/clinical-info.js"></script>
 <script src="js/controllers/ncategory.js"></script>
 <script src="js/controllers/mcategory.js"></script>
 <script src="js/controllers/tcategory.js"></script>

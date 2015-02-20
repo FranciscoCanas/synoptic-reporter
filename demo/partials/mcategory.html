@@ -1,21 +1,26 @@
 <div id="mcategory" ng-controller="mcategoryController">
-<p>Are there suspicious extrathoracic findings?
-	<label class="radio-inline"><input type="radio" value="no" ng-model="findings">No</label>
-	<label class="radio-inline"><input type="radio" value="yes" ng-model="findings">Yes</label>
-	</p>
-	<div ng-show="findings == 'yes'">
-		<form class="form-horizontal">
-			<div ng-repeat="node in nodes">
-				<div class="form-group">
-					<label class="control-label col-xs-2">{{$index+1}}) {{node.label}}</label>
-					<div class="col-xs-1">
-						<input type="checkbox" class="form-control" ng-model="node.selected">
+	<h6 class="section-title">5 - M Category</h6>
+	<ol>
+		<li>
+			<p>Are there suspicious extrathoracic findings?
+				<label class="radio-inline"><input type="radio" value="no" ng-model="findings">No</label>
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="findings">Yes*</label>
+			</p>
+			<div ng-show="findings == 'yes'">
+				<form class="form-horizontal">
+					<div ng-repeat="node in nodes">
+						<div class="form-group">
+							<label class="control-label col-xs-2">{{$index+1}}) {{node.label}}</label>
+							<div class="col-xs-1">
+								<input type="checkbox" class="form-control" ng-model="node.selected">
+							</div>
+							<div class="col-xs-9" ng-show="node.selected">
+								<input type="text" class="form-control" ng-model="node.text">
+							</div>	
+						</div>
 					</div>
-					<div class="col-xs-9" ng-show="node.selected">
-						<input type="text" class="form-control" ng-model="node.text">
-					</div>	
-				</div>
+				</form>
 			</div>
-		</form>
-	</div>
+		</li>
+	</ol>
 </div>

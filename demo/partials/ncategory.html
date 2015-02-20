@@ -1,26 +1,32 @@
 <div id="ncategory" ng-controller="ncategoryController">
-	<p>Are there suspicious N1, N2, or N3 nodes?
-	<label class="radio-inline"><input type="radio" value="no" ng-model="suspicious_n_nodes">No</label>
-	<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes</label>
-	</p>
-	<div ng-show="suspicious_n_nodes == 'yes'">
-		Identify which Nodes:
-		<form class="form-horizontal">
-			<div ng-repeat="node in nodes">
-				<div class="form-group">
-					<label class="control-label col-xs-5">{{$index+1}}) {{node.label}}</label>
-					<div class="col-xs-1">
-						<input type="checkbox" class="form-control" ng-model="node.selected">
+	<h6 class="section-title">4 - N Category</h6>
+	<ol>
+		<li>
+			<p>Are there suspicious N1, N2, or N3 nodes?
+				<label class="radio-inline"><input type="radio" value="no" ng-model="suspicious_n_nodes">No</label>
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes*</label>
+			</p>
+			<div ng-show="suspicious_n_nodes == 'yes'">
+				Identify which Nodes:
+				<form class="form-horizontal">
+					<div ng-repeat="node in nodes">
+						<div class="form-group">
+							<label class="control-label col-xs-5">{{$index+1}}) {{node.label}}</label>
+							<div class="col-xs-1">
+								<input type="checkbox" class="form-control" ng-model="node.selected">
+							</div>
+							<div class="col-xs-6" ng-show="node.selected">
+								<input type="text" class="form-control" ng-model="node.text">
+							</div>	
+						</div>
 					</div>
-					<div class="col-xs-6" ng-show="node.selected">
-						<input type="text" class="form-control" ng-model="node.text">
-					</div>	
-				</div>
+				</form>
 			</div>
-			<label class="control-label">Other notable findings:</label>
-			<div class="">
-				<input type="text" class="form-control" ng-model="other_notable">
-			</div>	
+		</li>
+		<li><form>
+			Other notable findings:
+			<input type="text" class="form-control" ng-model="bronchial_involvement">
 		</form>
-	</div>
+	</li>
+</ol>
 </div>

@@ -1,22 +1,27 @@
 <div id="additional" ng-controller="additionalController">
-	<p>Are there additional findings?
-	<label class="radio-inline"><input type="radio" value="no" ng-model="extra_findings">No</label>
-	<label class="radio-inline"><input type="radio" value="yes" ng-model="extra_findings">Yes</label>
-	</p>
-	<div ng-show="extra_findings == 'yes'">
-		<form class="form-horizontal">
-			<div ng-repeat="finding in findings">
-				<div class="form-group">
-					<div class="col-xs-1">
-						<input type="checkbox" class="form-control" ng-model="finding.selected">
+	<h6 class="section-title">6 - Additional Findings</h6>
+	<ol>
+		<li>
+			<p>Are there additional findings?
+				<label class="radio-inline"><input type="radio" value="no" ng-model="extra_findings">No</label>
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="extra_findings">Yes*</label>
+			</p>
+			<div ng-show="extra_findings == 'yes'">
+				<form class="form-horizontal">
+					<div ng-repeat="finding in findings">
+						<div class="form-group">
+							<div class="col-xs-1">
+								<input type="checkbox" class="form-control" ng-model="finding.selected">
+							</div>
+							<label class="control-label col-xs-4">{{$index+1}}) {{finding.label}}</label>
+							<div class="col-xs-7" ng-show="finding.selected">
+								<input type="text" class="form-control" ng-model="finding.text">
+							</div>	
+						</div>
 					</div>
-					<label class="control-label col-xs-4">{{$index+1}}) {{finding.label}}</label>
-					<div class="col-xs-7" ng-show="finding.selected">
-						<input type="text" class="form-control" ng-model="finding.text">
-					</div>	
-				</div>
+				</form>
 			</div>
-		</form>
-	</div>
+		</li>
+	</ol>
 </div>
 
