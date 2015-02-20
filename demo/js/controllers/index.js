@@ -6,9 +6,12 @@ angular.module('controllers').controller('indexController', function ($scope, $l
 		$anchorScroll();	 // Scroll to current hash.
 	};
 
-	$document.ready(function () {
-		console.log('Document Loaded');
-        /*
+	/* Runs after each ng-include is loaded.*/
+	$scope.$on('$includeContentLoaded', function(event) {
+	    $("#clinical-info-text").focus();
+  		console.log('another include was loaded', event.targetScope);
+
+  		/*
 		* Center all input fields when user focuses on them.
 		*/
 		$(':input').focus(function(){

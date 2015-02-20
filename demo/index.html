@@ -27,7 +27,9 @@
 					<h3>{{title}}</h3>
 				</div>
 				<div id="description">
-					<p>{{description}}</p>
+					<p>
+					<textarea readonly type="textarea" rows="2" class="form-control" ng-model="description"></textarea>
+					</p>
 				</div>
 				<!-- Bound sections to the index controller.-->
 				<div id="{{section.file}}" ng-repeat="section in sections">
