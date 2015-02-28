@@ -7,20 +7,8 @@
 				<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes*</label>
 			</p>
 			<div ng-show="suspicious_n_nodes == 'yes'">
-				Identify which Nodes:
-				<form class="form-horizontal">
-					<div ng-repeat="node in nodes">
-						<div class="form-group">
-							<label class="control-label col-xs-5">{{$index+1}}) {{node.label}}</label>
-							<div class="col-xs-1">
-								<input type="checkbox" class="form-control" ng-model="node.selected">
-							</div>
-							<div class="col-xs-6" ng-show="node.selected">
-								<input type="text" class="form-control" ng-model="node.text">
-							</div>	
-						</div>
-					</div>
-				</form>
+				Indicate and describe which nodes apply:
+				<nodes-checkbox-form model="nodes"></nodes-checkbox-form>
 			</div>
 		</li>
 		<li><form>

@@ -1,6 +1,33 @@
-angular.module('controllers').controller('indexController', function ($scope, $location, $anchorScroll, $document) {
-	/* Scrolls to specified section id. */
-	$scope.goToSection = function(id) {
+angular.module('controllers').controller('indexController', function ($scope, $location, $anchorScroll, $document, $parse) {
+	$scope.test = {
+		heading: 'Testing!'
+	}
+	$scope.tester = {
+		heading: 'Favourite Song',
+		display: $parse('item.song + \' by \' + item.name'),
+		selection: 0,
+		choices:
+		[
+		{ 	'id': 0,
+		'name': 'Stephen Foster',
+		'song': 'Oh! Susanna',
+		'url': 'PZXvxOXXdCk'
+	},
+	{ 	'id':1,
+	'name': 'Dink Roberts',
+	'song': 'Coo Coo',
+	'url': 'GkyZ555DHrI'
+},
+{	'id': 2,
+'name': 'Blind Lemon Jefferson',
+'song': 'Black Snake Moan',
+'url': 'h3yd-c91ww8'
+},
+]
+};
+
+/* Scrolls to specified section id. */
+$scope.goToSection = function(id) {
 		$location.replace(); // Replace hash, instead of append.
 		$location.hash(id);  // Set url hash to given id.
 		$anchorScroll();	 // Scroll to current hash.
@@ -8,8 +35,7 @@ angular.module('controllers').controller('indexController', function ($scope, $l
 
 	/* Runs after each ng-include is loaded.*/
 	$scope.$on('$includeContentLoaded', function(event) {
-	    $("#clinical-info-text").focus();
-  		console.log('another include was loaded', event.targetScope);
+		$("#clinical-info-text").focus();
 
   		/*
 		* Center all input fields when user focuses on them.
@@ -19,7 +45,6 @@ angular.module('controllers').controller('indexController', function ($scope, $l
 			var center = $(window).height() / 2;
 			var top = $(this).offset().top ;
 			ele.attr('test','la');
-			console.log(ele.attr('class'));
 			if (top > center){
 				$(window).scrollTop(top - center);
 			}

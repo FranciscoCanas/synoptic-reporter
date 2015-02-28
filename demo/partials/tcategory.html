@@ -22,6 +22,7 @@
 						<li>
 							<form class="form-inline">
 								<label class="control-label">What is the distance from the mass to the carina?</label>
+								<br>
 								<div class="input-group col-sm-2">
 									<input type="text" class="form-control input-sm" ng-model="dist_to_carina">
 									<div class="input-group-addon">mm</div>
@@ -84,7 +85,7 @@
 						</li>
 						<li>
 							<form class="form-inline">
-								<input type="checkbox"  class="col-sm-1" ng-model="solid"/>
+								<input type="checkbox"  class="col-sm-1" ng-model="part_solid"/>
 								<label class="control-label col-sm-2">Part-solid Nodule/Mass:</label>
 								<ul>
 									<li>
@@ -140,7 +141,7 @@
 				<input type="text" class="form-control" ng-model="vascular_involvement">
 			</form>
 		</li>
-		
+
 		<li>
 			<p>
 				Is there involvement of any other anatomical structures:
@@ -149,21 +150,9 @@
 				<input type="radio" value="yes" ng-model="anatomical_structures">
 				Yes*
 			</p>
-			<form class="form-horizontal" ng-show="anatomical_structures == 'yes'">
-				<div ng-repeat="structure in structures">
-					<div class="form-group">
-						<label class="control-label col-xs-3">{{$index+1}}) {{structure.label}}</label>
-						<div class="col-xs-3">
-							<div ng-init="structure.status = 'normal'"/>
-							<input type="radio" value="normal" ng-model="structure.status"> Normal
-							<input type="radio" value="abnormal" ng-model="structure.status"> Abnormal
-						</div>
-						<div class="col-xs-6" ng-show="structure.status == 'abnormal'">
-							<input type="text" class="form-control" ng-model="node.text">
-						</div>	
-					</div>
-				</div>
-			</form>
+			<div ng-show="anatomical_structures == 'yes'">
+				<nodes-radio-form model="structures"></nodes-radio-form>
+			</div>
 		</li>
 		<li>
 			Are there additional suspicious pulmonary nodules?
@@ -172,19 +161,7 @@
 			<input type="radio" value="yes" ng-model="additional_nodules">
 			Yes*
 			<div ng-show="additional_nodules == 'yes'">
-				<form class="form-horizontal">
-					<div ng-repeat="node in nodules">
-						<div class="form-group">
-							<label class="control-label col-xs-4">{{$index+1}}) {{node.label}}</label>
-							<div class="col-xs-1">
-								<input type="checkbox" class="form-control" ng-model="node.selected">
-							</div>
-							<div class="col-xs-7" ng-show="node.selected">
-								<input type="text" class="form-control" ng-model="node.text">
-							</div>	
-						</div>
-					</div>
-				</form>
+					<nodes-checkbox-form model="nodules"></nodes-checkbox-form>
 			</div>
 		</li>
 		<li><form>
@@ -192,7 +169,7 @@
 			<input type="text" class="form-control" ng-model="other_intrathoracic_findings">
 		</form>
 	</li>
-	
+
 </ol>
 </li>
 </ol>

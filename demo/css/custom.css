@@ -47,14 +47,32 @@ h6 {
 
 input
 { 
-    /*padding: 1px;*/
+    padding: 1px;
 }
 
-li {
+ol li {
 	padding: 5px;
 }
 
 ul {
 	list-style-type: none;
 	padding-left: 0px;
+}
+
+ul li {
+	padding: 5px;
+}
+
+ul.no-margin .form-group {
+	padding: 0px;
+	line-height: 1.7em;
+	margin: 0.1em;
+}
+
+/*.form-horizontal .control-group {
+    margin-bottom: 0px;
+}*/
+
+input[type="checkbox"] {
+	/*height: 1em;*/
 }

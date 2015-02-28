@@ -1,0 +1,14 @@
+<form class="form-inline">
+	<ul class="no-margin">
+	<div class="form-group-inline" ng-repeat="item in model.items">		
+	<li>
+		<div class="checkbox col-sm-6">
+  			<label><input type="checkbox" class="form-control" ng-model="item.selected">{{index}}) {{item.label}}</label>
+		</div>
+		<div class="col-sm-6" ng-show="item.selected">
+			<input type="text" class="form-control" ng-model="item.text">
+		</div>
+	</li>
+	</div>
+	</ul>
+</form>

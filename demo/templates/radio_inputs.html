@@ -1,9 +1,9 @@
-<div ng-model="radio">
-{{radio.heading}}
+<div type="text/ng-template">
+{{model.heading}}
 	<form>
-		<p ng-repeat="choice in radio.choices">
-			<input type="radio" value="{{choice.id}}" ng-model="radio.selection"> 
-			{{radio.display({item:choice})}}
+		<p ng-repeat="choice in model.choices">
+			<input type="radio" value="{{choice.id}}" ng-model="model.selection"> 
+			{{model.display({item:choice})}}
 		</p>
 	</form>
 </div>

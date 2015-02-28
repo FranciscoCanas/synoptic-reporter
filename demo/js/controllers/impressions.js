@@ -3,8 +3,8 @@ angular.module('controllers').controller('impressionsController', function ($sco
 	$scope.ncat = ncatSrv;
 	$scope.tcat = tcatSrv;
 	$scope.findings = [
-	{'label':'Primary Tumour (T):', 'text': ''},
-	{'label':'Regional Lymph Nodes (N):', 'text':''},
-	{'label':'Distant Metastasis (M):', 'text': ''},
+	{'label':'Primary Tumour (T):', 'text': '', 'items':['T1a', 'T1b','T2','T2a','T2b','T3','T4']},
+	{'label':'Regional Lymph Nodes (N):', 'text':'', 'items':['NX','N0','N1','N2','N3']},
+	{'label':'Distant Metastasis (M):', 'text': '', 'items':['M0','M1','M1a','M1b']},
 	]
 });

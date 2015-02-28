@@ -13,8 +13,14 @@
 		<div ng-repeat="finding in findings">
 			<div class="form-group">
 				<label class="control-label col-xs-4">{{$index+1}}) {{finding.label}}</label>
-				<div class="col-xs-8">
-					<input type="text" class="form-control" ng-model="finding.text">
+				<div class="col-xs-2">
+				<form class="form-inline">
+					<!-- <select class="dropdown"> -->
+					<div ng-repeat="option in finding.items">				       
+					<label class="radio inline control-label"><input type="radio"  value="{{option}}"/>{{option}}</label>
+				     <!-- </select> -->
+				     </div>
+				     </form>
 				</div>	
 			</div>
 		</div>

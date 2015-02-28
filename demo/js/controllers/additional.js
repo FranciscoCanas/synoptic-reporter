@@ -1,5 +1,5 @@
 angular.module('controllers').controller('additionalController', function ($scope) {
-	$scope.findings = [
+	$scope.findings = {items:[
 		{'label':'Emphysema'},
 		{'label':'Fibrosis'},
 		{'label':'Coronary artery disease'},
@@ -8,5 +8,5 @@ angular.module('controllers').controller('additionalController', function ($scop
 		{'label':'Atherosclerosis'},
 		{'label':'Pulmonary Embolism'},
 		{'label':'Other'},
-	]
+	]};
 });
