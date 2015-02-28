@@ -37,3 +37,13 @@ angular.module('synoptic').directive('nodesCheckboxForm', function() {
         }
     };
 });
+
+angular.module('synoptic').directive('inlineRadioForm', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/side_by_side_radio.html',
+        scope: {
+            model: '='
+        }
+    };
+});
