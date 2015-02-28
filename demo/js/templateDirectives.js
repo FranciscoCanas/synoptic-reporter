@@ -47,3 +47,13 @@ angular.module('synoptic').directive('inlineRadioForm', function() {
         }
     };
 });
+
+angular.module('synoptic').directive('sizeSeriesImage', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/size_series_image.html',
+        scope: {
+            model: '='
+        }
+    };
+});

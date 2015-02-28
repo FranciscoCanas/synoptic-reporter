@@ -63,62 +63,49 @@
 					</form>
 				</li>
 				<li>
-					<p>Size of the Nodule/Mass:</p>
-					<ul>
-						<li>
-							<form class="form-inline">
-								<input type="checkbox" class="col-sm-1" ng-model="solid"/>
-								<label class="control-label col-sm-2">Solid Nodule/Mass:</label>
-								<div class="input-group col-sm-2">
-									<input type="text" class="form-control input-sm" ng-model="solid_size">
-									<div class="input-group-addon">mm</div>
-								</div>
-								<label class="control-label">Series:</label>
-								<div class="input-group col-sm-1">
-									<input type="text" class="form-control input-sm" ng-model="solid_series">
-								</div>
-								<label class="control-label">Image:</label>
-								<div class="input-group col-sm-1">
-									<input type="text" class="form-control input-sm" ng-model="solid_image">
-								</div>
-							</form>
-						</li>
-						<li>
-							<form class="form-inline">
-								<input type="checkbox"  class="col-sm-1" ng-model="part_solid"/>
-								<label class="control-label col-sm-2">Part-solid Nodule/Mass:</label>
-								<ul>
-									<li>
-										<label class="control-label col-sm-3">Total size of lesion:</label>
-										<div class="input-group col-sm-2">
-											<input type="text" class="form-control input-sm" ng-model="part_solid_total_size">
-											<div class="input-group-addon">mm</div>
-										</div>
-									</li>
-									<li>
-										<div class="col-sm-3"/>
-
-										<label class="control-label col-sm-3">Size of solid component:</label>
-										<div class="input-group col-sm-2">
-											<input type="text" class="form-control input-sm" ng-model="part_solid_solid_size">
-											<div class="input-group-addon">mm</div>
-										</div>
-									</li>
-									<li>
-										<div class="col-sm-3"/>
-										<label class="control-label">Series:</label>
-										<div class="input-group col-sm-1">
-											<input type="text" class="form-control input-sm" ng-model="part_solid_series">
-										</div>
-										<label class="control-label">Image:</label>
-										<div class="input-group col-sm-1">
-											<input type="text" class="form-control input-sm" ng-model="part_solid_image">
-										</div>
-									</li>
-								</ul>
-							</form>
-						</li>
-					</ul>
+					Size of the Nodule/Mass:
+					<form class="form-inline">
+						<input type="radio" value="solid" class="col-md-1" ng-model="solid_part_solid"/>
+						<label class="control-label col-md-4">Solid Nodule/Mass:</label>
+						<input type="radio"  value="part-solid" class="col-md-1" ng-model="solid_part_solid"/>
+						<label class="control-label col-md-4">Part-solid Nodule/Mass:</label>
+					</form>
+					<br>
+					<div ng-show="solid_part_solid == 'solid'">
+						<div class="col-md-1"/>
+						<size-series-image model="solid_nodule"></size-series-image>
+					</div>
+					<div ng-show="solid_part_solid == 'part-solid'">
+					<div class="col-md-1"/>
+						<form class="form-inline">
+							<ul>
+								<li>
+									<label class="control-label col-sm-3">Total size of lesion:</label>
+									<div class="input-group col-sm-2">
+										<input type="text" class="form-control input-sm" ng-model="part_solid_total_size">
+										<div class="input-group-addon">mm</div>
+									</div>
+								</li>
+								<li>
+									<label class="control-label col-sm-3">Size of solid component:</label>
+									<div class="input-group col-sm-2">
+										<input type="text" class="form-control input-sm" ng-model="part_solid_solid_size">
+										<div class="input-group-addon">mm</div>
+									</div>
+								</li>
+								<li>
+									<label class="control-label col-sm-3">Series:</label>
+									<div class="input-group col-sm-1">
+										<input type="text" class="form-control input-sm" ng-model="part_solid_series">
+									</div>
+									<label class="control-label">Image:</label>
+									<div class="input-group col-sm-1">
+										<input type="text" class="form-control input-sm" ng-model="part_solid_image">
+									</div>
+								</li>
+							</ul>
+						</form>
+					</div>
 				</li>
 				<li>
 					<form>
@@ -161,7 +148,7 @@
 			<input type="radio" value="yes" ng-model="additional_nodules">
 			Yes*
 			<div ng-show="additional_nodules == 'yes'">
-					<nodes-checkbox-form model="nodules"></nodes-checkbox-form>
+				<nodes-checkbox-form model="nodules"></nodes-checkbox-form>
 			</div>
 		</li>
 		<li><form>
