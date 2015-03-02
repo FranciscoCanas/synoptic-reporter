@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="synoptic">
+<head>
+	<meta charset="utf-8">
+	<title>Angular UI Logic Demo</title>	
+	<!-- Bootstrap Dependencies-->
+	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+	<div class="container" ng-controller="indexController">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar-wrapper">
+				<!--SIDE BAR Content-->
+				<div class="list-group sidebar-nav">
+					<div ng-repeat="section in sections">
+						<a ng-click="goToSection(section.file)" href="" class="list-group-item">{{section.title}}</a>
+						<!-- For testing with pagination:
+						<a href="#{{section.file}}" class="list-group-item">{{$index + 1}}. {{section.title}}</a> -->
+					</div>
+				</div>
+			</div> <!-- End of Sidebar -->
+			<div class="col-xs-12 col-sm-9" id="page-content-wrapper">
+				<!--MAIN PANE content-->
+				<div id="title">
+					<h3>{{title}}</h3>
+				</div>
+				<div id="description">
+					<p>
+					<textarea readonly type="textarea" rows="2" class="form-control" ng-model="description"></textarea>
+					</p>
+				</div>
+				<!-- Bound sections to the index controller.-->
+				<div id="{{section.file}}" ng-repeat="section in sections">
+					<p class="bg-primary section-title" ng-show="!section.is_subsection" indexed-template>{{section.title}}</p>
+					<div ng-include="'partials/' + section.file + '.html'"></div>
+					<br>
+				</div>
+				<div id="footer"/>
+				<!-- For testing with pagination: <div ng-view></div> -->
+			</div> <!-- End of Main Pane -->
+		</div>
+	</div>
+</body>
+<!-- Angular Dependencies-->
+<script src="jquery/jquery-1.11.2.min.js"></script>
+<script src="angular/angular.min.js"></script>
+<script src="angular/angular-route.min.js"></script>
+<script src="app.js"></script>
+<script src="js/templateDirectives.js"></script>
+<script src="js/controllers/controllers.js"></script>
+<script src="js/controllers/index.js"></script>
+<script src="js/controllers/protocols.js"></script>
+<script src="js/controllers/clinical-info.js"></script>
+<script src="js/controllers/ncategory.js"></script>
+<script src="js/controllers/mcategory.js"></script>
+<script src="js/controllers/tcategory.js"></script>
+<script src="js/controllers/additional.js"></script>
+<script src="js/controllers/impressions.js"></script>
+</html>

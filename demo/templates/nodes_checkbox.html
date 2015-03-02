@@ -1,15 +1,15 @@
-<form class="form-inline">
-	<ul class="no-margin">
-		<li ng-repeat="item in model.items">
-			<div class="col-md-6">
-	  			<label class="checkbox-inline">
-	  			<input type="checkbox" class="form-control" ng-model="item.selected">
-	  			{{item.label}}
-	  			</label>
+<form class="form-horizontal"> 
+	<ol class="no-margin">
+		<div ng-repeat="item in model.items">
+			<div class="form-group">
+				<div class="col-xs-1">
+					<input type="checkbox" value="normal" ng-model="item.status">
+				</div>
+				<label class="control-label col-xs-4">{{$index+1}}) {{item.label}}</label>
+				<div class="col-xs-5" ng-show="item.status">
+					<input type="text" class="form-control input-sm" ng-model="item.text">
+				</div>	
 			</div>
-			<div class="col-md-6" ng-show="item.selected">
-				<input type="text" class="form-control" ng-model="item.text">
-			</div>
-		</li>
+		</div>
 	</ul>
 </form>

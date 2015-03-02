@@ -1,17 +1,17 @@
 <form class="form-horizontal"> 
+	<ul class="no-margin">
 		<div ng-repeat="item in model.items">
-			<ul class="no-margin">
-				<div class="form-group">
-					<label class="control-label col-xs-4">{{$index+1}}) {{item.label}}</label>
-					<div class="col-xs-3">
-						<div ng-init="item.status = 'normal'"/>
-						<input type="radio" value="normal" ng-model="item.status"> Normal
-						<input type="radio" value="abnormal" ng-model="item.status"> Abnormal
-					</div>
-					<div class="col-xs-5" ng-show="item.status == 'abnormal'">
-						<input type="text" class="form-control input-sm" ng-model="item.text">
-					</div>	
+			<div class="form-group">
+				<label class="control-label col-xs-4">{{$index+1}}) {{item.label}}</label>
+				<div class="col-xs-3">
+					<div ng-init="item.status = 'normal'"/>
+					<input type="radio" value="normal" ng-model="item.status"> Normal
+					<input type="radio" value="abnormal" ng-model="item.status"> Abnormal
 				</div>
-			</ul>
+				<div class="col-xs-5" ng-show="item.status == 'abnormal'">
+					<input type="text" class="form-control input-sm" ng-model="item.text">
+				</div>	
+			</div>
 		</div>
+	</ul>
 </form>
