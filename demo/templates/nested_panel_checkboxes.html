@@ -1,0 +1,17 @@
+<table class="table table-bordered">
+<tbody>
+<tr ng-repeat="panel in model.panels">
+	<td>
+		<input type="checkbox" ng-model="panel.selected"> {{panel.heading}}
+	</td>
+	<td ng-show="panel.selected">
+		<ul>
+	    <li ng-repeat="item in panel.items">
+	    <input type="checkbox" ng-model="item.selected"> 
+	    	{{item.label}}
+	    </li>
+	    </ul>
+	</td>
+</tr>
+</tbody>
+</table>
