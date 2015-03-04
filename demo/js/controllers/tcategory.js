@@ -23,6 +23,39 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 		{'label':'In the opposite lung (M1a)'},
 	]};
 
+	$scope.peripheral_nodules = {
+		panels: [
+			{	
+				heading: 'RUL',
+				items: [{label:'Apical'}, {label:'Posterior'}, {label:'Anterior'}],
+			},
+			{	
+				heading: 'RML',
+				items: [{label:'Lateral'}, {label:'Medial'}],
+			},
+			{	
+				heading: 'RLL',
+				items: [
+				{label:'Superior'}, {label:'Medial Basal'}, {label:'Anterior Basal'},
+					{label:'Lateral Basal'}, {label:'Posterior Basal'},
+				],
+			},
+			{	
+				heading: 'LINGUAL',
+				items: [{label:'Superior'}, {label:'Inferior'}],
+			},
+			{	
+				heading: 'LUL',
+				items: [{label:'Apico-Posterior'}, {label:'Anterior'}],
+			},
+			{	
+				heading: 'LLL',
+				items: [{label:'Superior'}, {label:'Anterior Medial Basal'},
+				{label:'Lateral Basal'}, {label:'Posterior Basal'},],
+			},
+		]
+	};
+
 	$scope.catdata = tcatSrv;
 	$scope.catdata.structures = $scope.structures;
 	$scope.catdata.nodules = $scope.nodules;

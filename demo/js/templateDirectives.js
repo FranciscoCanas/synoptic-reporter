@@ -57,3 +57,13 @@ angular.module('synoptic').directive('sizeSeriesImage', function() {
         }
     };
 });
+
+angular.module('synoptic').directive('nestedPanelCheckboxes', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/nested_panel_checkboxes.html',
+        scope: {
+            model: '='
+        }
+    };
+});

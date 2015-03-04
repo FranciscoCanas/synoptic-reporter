@@ -15,9 +15,20 @@
 					<ol>
 						<li>
 							<form>
-								State if there is main stem bronchus involvement, and describe:
-								<input type="text" class="form-control" ng-model="bronchus_involvement">
+								Is there main stem bronchus involvement?
+								<label class="radio-inline"><input type="radio" value="no" ng-model="bronchal_involvement">No</label>
+								<label class="radio-inline"><input type="radio" value="yes" ng-model="bronchal_involvement">Yes*</label>
 							</form>
+							<ol ng-show="bronchal_involvement ==  'yes'">
+							<li>
+							<form>
+								Main Stem Bronchus:
+								<label class="radio-inline"><input type="radio" value="right" ng-model="main_stem_bronchus">Right</label>
+								<label class="radio-inline"><input type="radio" value="left" ng-model="main_stem_bronchus">Left</label>
+							</form>
+
+							</li>
+							</ol>
 						</li>
 						<li>
 							<form class="form-inline">
@@ -42,40 +53,37 @@
 
 				<div ng-show="location == 'peripheral'">
 					<li>
-						<form>
-							State the lobe(s) and segment(s) where the mass is located:
-							<input type="text" class="form-control" ng-model="lobe_segment">
-						</form>
+						Check off the lobe(s) and segment(s) where the nodule/mass is located:
+						<!-- TEMPLATE FOR MULTI-CELL CHECKBOX TABLE HERE-->
+						<nested-panel-checkboxes model="peripheral_nodules"></nested-panel-checkboxes>
 					</li>
 				</div>
-
 			</ol>
 		</li>
 		<li>
 			<h5>Size and characteristics of main nodule/mass</h5>
 			<ol>
 				<li>
-					<form class="form-inline">
-						<label class="control-label"> Plane in which it was measured:</label>
-						<div class="input-group">
-							<input type="text" class="form-control" ng-model="plain_measured">
-						</div>
-					</form>
+					Plane in which main nodule/mass was measured:
+					<input type="radio" value="axial" ng-model="plain_measured"> Axial
+					<input type="radio" value="cornal" ng-model="plain_measured"> Coronal
+					<input type="radio" value="sagittal" ng-model="plain_measured"> Sagittal
 				</li>
 				<li>
-					Size of the Nodule/Mass:
-					<form class="form-inline">
-						<input type="radio" value="solid" class="col-md-1" ng-model="solid_part_solid"/>
-						<label class="control-label col-md-4">Solid Nodule/Mass:</label>
-						<input type="radio"  value="part-solid" class="col-md-1" ng-model="solid_part_solid"/>
-						<label class="control-label col-md-4">Part-solid Nodule/Mass:</label>
-					</form>
+					Is the Nodule/Mass:
+					<input type="radio" value="solid" ng-model="nodule_state"> Solid
+					<input type="radio" value="part-solid" ng-model="nodule_state"> Part-Solid*
+					<input type="radio" value="glass" ng-model="nodule_state"> Pure Ground Glass
+					<input type="radio" value="cavitary" ng-model="nodule_state"> Cavitary
+					<input type="radio" value="lucencies" ng-model="nodule_state"> Containing Cystic Lucencies
 					<br>
-					<div ng-show="solid_part_solid == 'solid'">
+					Size of the widest Dimension:
+					<size-series-image model="solid_nodule"></size-series-image>
+					<div ng-show="nodule_state == 'solid'">
 						<div class="col-md-1"/>
 						<size-series-image model="solid_nodule"></size-series-image>
 					</div>
-					<div ng-show="solid_part_solid == 'part-solid'">
+					<div ng-show="nodule_state == 'part-solid'">
 					<div class="col-md-1"/>
 						<form class="form-inline">
 							<ul>
