@@ -56,6 +56,24 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 		]
 	};
 
+	$scope.right_bronchi = {
+		items: [
+		{'label': 'Right Upper Lobe'},
+		{'label': 'Bronchus Intermedius'},
+		{'label': 'Right Middle Lobe'},
+		{'label': 'Lower Lobe Bronchi'},
+		],
+	}
+
+		$scope.left_bronchi = {
+		items: [
+		{'label': 'Left Upper Lobe'},
+		{'label': 'Lingula'},
+		{'label': 'Left Lower Lobe'},
+		],
+	}
+	
+
 	$scope.catdata = tcatSrv;
 	$scope.catdata.structures = $scope.structures;
 	$scope.catdata.nodules = $scope.nodules;

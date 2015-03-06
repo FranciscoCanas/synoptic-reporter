@@ -76,33 +76,34 @@
 					<input type="radio" value="glass" ng-model="nodule_state"> Pure Ground Glass
 					<input type="radio" value="cavitary" ng-model="nodule_state"> Cavitary
 					<input type="radio" value="lucencies" ng-model="nodule_state"> Containing Cystic Lucencies
-					<br>
-					Size of the widest Dimension:
-					<size-series-image model="solid_nodule"></size-series-image>
-					<div ng-show="nodule_state == 'solid'">
-						<div class="col-md-1"/>
-						<size-series-image model="solid_nodule"></size-series-image>
-					</div>
+					<ol>
+					<li><ul><li>
+						<form class="form-inline">
+						Size of the widest Dimension: <size-series-image model="solid_nodule"></size-series-image>
+						</form>
+						</li>
+						</ul>
+					</li>
 					<div ng-show="nodule_state == 'part-solid'">
-					<div class="col-md-1"/>
+					<li>
 						<form class="form-inline">
 							<ul>
 								<li>
-									<label class="control-label col-sm-3">Total size of lesion:</label>
+									<label class="control-label col-sm-4">Total size of lesion:</label>
 									<div class="input-group col-sm-2">
 										<input type="text" class="form-control input-sm" ng-model="part_solid_total_size">
 										<div class="input-group-addon">mm</div>
 									</div>
 								</li>
 								<li>
-									<label class="control-label col-sm-3">Size of solid component:</label>
+									<label class="control-label col-sm-4">Size of solid component:</label>
 									<div class="input-group col-sm-2">
 										<input type="text" class="form-control input-sm" ng-model="part_solid_solid_size">
 										<div class="input-group-addon">mm</div>
 									</div>
 								</li>
 								<li>
-									<label class="control-label col-sm-3">Series:</label>
+									<label class="control-label col-sm-4">Series:</label>
 									<div class="input-group col-sm-1">
 										<input type="text" class="form-control input-sm" ng-model="part_solid_series">
 									</div>
@@ -113,23 +114,74 @@
 								</li>
 							</ul>
 						</form>
+						</li>
+					</div>
+					</ol>
+				</li>
+				<li>
+					Margins:
+					<input type="radio" value="smooth" ng-model="margins"> Smooth
+					<input type="radio" value="ill-defined" ng-model="margins"> Ill-defined
+					<input type="radio" value="spiculated" ng-model="margins"> Spiculated
+					<input type="radio" value="lobulated" ng-model="margins"> Lobulated
+					<input type="radio" value="obscured" ng-model="margins"> Obscured*
+					<input type="radio" value="other" ng-model="margins"> Other
+					<input ng-show="margins == 'other'" type="text" class="form-control" ng-model="margin_other_text">
+					<div ng-show="margins== 'obscured' ">
+						<ol>
+							<li>
+							Margins obscured by:
+							<input type="radio" value="scarring" ng-model="margins_obscured"> Scarring
+							<input type="radio" value="atelectasis" ng-model="margins_obscured"> Atelectasis/Post obstructive pneumonitis*
+							<div ng-show="margins_obscured == 'atelectasis'">
+							<ol><li>
+							<input type="radio" value="less-than-lobe" ng-model="atelectasis"> Less than whole lobe
+							<input type="radio" value="whole-lobe" ng-model="atelectasis"> Whole lobe
+							<input type="radio" value="whole-lung" ng-model="atelectasis"> Whole lung
+							</li></ol>
+							</div>
+							</li>
+						</ol>
+
 					</div>
 				</li>
 				<li>
-					<form>
-						Characteristics of the main nodule/mass:
-						<input type="text" class="form-control" ng-model="characteristics">
-					</form>
+				Are there air bronchograms within the mass?
+				<input type="radio" value="no" ng-model="bronchograms"> No
+				<input type="radio" value="yes" ng-model="bronchograms"> Yes
+				<input type="radio" value="cannot-assess" ng-model="bronchograms"> Cannot be Assessed
 				</li>
 			</ol>
 		</li>
 		<li>
-			<h5>Structures directly involved</h5>
+			<h5>Structures involved</h5>
 			<ol>
-				<li><form>
-					State if there is bronchial involvement, and what type of involvement there is:
-					<input type="text" class="form-control" ng-model="bronchial_involvement">
+				<li>
+				<form>
+					Is there bronchial involvement?
+					<input type="radio" value="no" ng-model="bronchial_involvement"> No
+					<input type="radio" value="yes" ng-model="bronchial_involvement"> Yes*
 				</form>
+				<div ng-show="bronchial_involvement == 'yes'">
+					<table class="table">
+						<thead>
+				          <tr>
+				            <th>Which Bronchi are Involved?</th>
+				            <th>Degree of Involvement</th>
+				          </tr>
+				       	</thead>
+				       	<tbody>
+				       		<tr><td colspan="2">Right Lung</td></tr>
+				       		<tr><td colspan="2">
+				       			<bronchi-involvement model="right_bronchi"></bronchi-involvement>
+				       		</td></tr>
+				       		<tr><td colspan="2">Left Lung</td></tr>
+				       		<tr><td colspan="2">
+				       			<bronchi-involvement model="left_bronchi"></bronchi-involvement>
+				       		</td></tr>
+				       	</tbody>
+					</table>
+				</div>
 			</li>
 			<li><form>
 				Comment on if there is vascular involvement, the type of involvement, and % of encasement:

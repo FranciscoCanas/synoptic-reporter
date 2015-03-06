@@ -67,3 +67,23 @@ angular.module('synoptic').directive('nestedPanelCheckboxes', function() {
         }
     };
 });
+
+angular.module('synoptic').directive('bronchiInvolvement', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/bronchi_involvement.html',
+        scope: {
+            model: '='
+        }
+    };
+});
+
+angular.module('synoptic').directive('degreeOfInvolvement', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/degree_of_involvement.html',
+        scope: {
+            model: '='
+        }
+    };
+});
