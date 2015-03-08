@@ -78,9 +78,26 @@
 					<input type="radio" value="lucencies" ng-model="nodule_state"> Containing Cystic Lucencies
 					<ol>
 					<li><ul><li>
+						<!-- <form class="form-inline">
+						Size of the widest dimension:
+						<size-series-image model="solid_nodule"></size-series-image>
+						</form> -->
 						<form class="form-inline">
-						Size of the widest Dimension: <size-series-image model="solid_nodule"></size-series-image>
-						</form>
+						<label class="control-label">Size of the widest dimension:</label>
+						<div class="input-group col-md-2">
+							<input type="text" class="form-control input-sm" ng-model="solid_nodule.size">
+							<div class="input-group-addon">mm</div>
+						</div>
+						<label class="control-label">Series:</label>
+						<div class="input-group col-md-1">
+							<input type="text" class="form-control input-sm" ng-model="solid_nodule.series">
+						</div>
+						<label class="control-label">Image:</label>
+						<div class="input-group col-md-1">
+							<input type="text" class="form-control input-sm" ng-model="solid_nodule.image">
+						</div>
+					</form>
+						
 						</li>
 						</ul>
 					</li>

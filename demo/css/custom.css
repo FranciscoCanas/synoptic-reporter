@@ -69,10 +69,17 @@ ul.no-margin .form-group {
 	margin: 0.1em;
 }
 
-/*.form-horizontal .control-group {
-    margin-bottom: 0px;
-}*/
+input:focus, input:active { 
+	outline: 3px solid orange;
+}
 
-/*input[type="checkbox"] {
-	height: 1em;
-}*/
+
+radio[focused="true"] > .radio-label-box {
+   border: orange; 
+   outline: 3px solid orange;
+}
+
+checkbox[focused="true"] > .checkbox-label-box {
+   border: orange; 
+   outline: 3px solid orange;
+}
