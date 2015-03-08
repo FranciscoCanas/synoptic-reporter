@@ -1,0 +1,46 @@
+<table class="table">
+	<tbody>
+		<tr>
+			<td width="15%">
+				<input type="checkbox" ng-model="model.selected"> {{model.label}}
+			</td>
+			<td width="35%">
+				<ul ng-show="model.selected">
+					<li>
+					<input type="radio" value="suspicious" ng-model="model.status"> Suspicious for metastatic disease*
+					</li>
+					<li>
+					<input type="radio" value="cannot-assess" ng-model="model.status"> Cannot be assessed
+					</li>
+					<li>
+					<input type="radio" value="benign" ng-model="model.status"> Benign
+					</li>
+				</ul>
+			</td>
+			<td>
+				<ol ng-show="model.status == 'suspicious' && model.selected">
+					<li>
+						Lateralization:
+						<form class="form-inline">
+							<label class="radio-inline"><input type="radio" value="right" ng-model="model.lateralization"> Right</label>
+							<label class="radio-inline"><input type="radio" value="left" ng-model="model.lateralization"> Left</label>
+						</form> 
+					</li>
+					<li>
+						<form class="form-inline">
+							<label class="radio-inline"><input type="radio" value="single" ng-model="model.lesion"> Single Lesion</label>
+							<label class="radio-inline"><input type="radio" value="multiple" ng-model="model.lesion"> Multiple Lesion</label>
+						</form> 
+					</li>
+					<li>
+						Measurement of largest lesion:
+						<div class="input-group col-md-4">
+						<input type="text" class="form-control input-sm" ng-model="model.lesion_size">
+							<div class="input-group-addon">mm</div>
+						</div>
+					</li>
+				</ol>
+			</td>
+		</tr>
+	</tbody>
+</table> 

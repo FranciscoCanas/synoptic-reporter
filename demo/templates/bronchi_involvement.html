@@ -1,14 +1,14 @@
-<table class="table">
+<table class="table table-bordered">
 <tbody>
 <tr ng-repeat="item in model.items">
-	<td>
+	<td width="33%">
 		<div class="col-md-1">
 			<input type="checkbox" value="normal" ng-model="item.status">
 		</div>
 		<label class="control-label"> {{item.label}}</label>
 	</td>
-	<td ng-show="item.status">
-		<degree-of-involvement model="item"></degree-of-involvement>
+	<td>
+		<degree-of-involvement model="item" ng-show="item.status"></degree-of-involvement>
 	</td>
 </tr>
 </tbody>

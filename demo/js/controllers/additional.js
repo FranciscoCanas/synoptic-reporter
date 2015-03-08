@@ -2,11 +2,10 @@ angular.module('controllers').controller('additionalController', function ($scop
 	$scope.findings = {items:[
 		{'label':'Emphysema'},
 		{'label':'Fibrosis'},
-		{'label':'Coronary artery disease'},
+		{'label':'Coronary Artery Disease'},
 		{'label':'Asbestos related pleural disease'},
 		{'label':'Interstitial lung disease'},
 		{'label':'Atherosclerosis'},
 		{'label':'Pulmonary Embolism'},
-		{'label':'Other'},
 	]};
 });

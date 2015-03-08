@@ -2,14 +2,20 @@
 	<h6 class="section-title">4 - N Category</h6>
 	<ol>
 		<li>
-			<p>Are there suspicious N1, N2, or N3 nodes?
-				<label class="radio-inline"><input type="radio" value="no" ng-model="suspicious_n_nodes">No</label>
-				<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes*</label>
-			</p>
-			<div ng-show="suspicious_n_nodes == 'yes'">
-				Indicate and describe which nodes apply:
-				<nodes-checkbox-form model="nodes"></nodes-checkbox-form>
-			</div>
+			<ul>
+				<li>
+					Are there suspicious N1, N2, or N3 nodes?
+					<label class="radio-inline"><input type="radio" value="no" ng-model="suspicious_n_nodes">No</label>
+					<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes*</label>
+				</li>
+				<li ng-show="suspicious_n_nodes == 'yes'">
+					<ul>
+					<li><suspicious-nodes model="n1"></suspicious-nodes></li>
+					<li><suspicious-nodes model="n2"></suspicious-nodes></li>
+					<li><suspicious-nodes model="n3"></suspicious-nodes></li>
+					</ul>
+				</li>
+			</ul>
 		</li>
 		<li>
 			<form>

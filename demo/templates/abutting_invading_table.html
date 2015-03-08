@@ -1,0 +1,13 @@
+<table class="table">
+<tbody>
+		<tr ng-repeat="item in model.items">
+			<td width="33%">
+				<input type="checkbox" ng-model="item.selected">
+				{{item.label}}
+			</td>
+			<td>
+				<abutting-invading model="item" ng-show="item.selected"></abutting-invading>
+			</td>
+		</tr>
+</tbody>
+</table>

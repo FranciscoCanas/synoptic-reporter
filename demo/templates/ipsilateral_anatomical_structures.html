@@ -1,0 +1,130 @@
+<table class="table">
+	<tbody>
+		<tr>
+			<td width="33%">
+				<input type="checkbox" ng-model="model.pleura"> 
+				Pleura
+			</td>
+			<td>
+				<ol ng-show="model.pleura">
+					<li>
+						<abutting-invading model="model.pleura_type"></abutting-invading>
+					</li>
+					<li>
+						Pleural Effusion?
+						<input type="radio" value="simple" ng-model="model.pleural_effusion"> Simple
+						<input type="radio" value="thickening" ng-model="model.pleural_effusion"> Thickening/Nodularity of Pleura
+						<input type="radio" value="loculated" ng-model="model.pleural_effusion">Loculated
+						<input type="radio" value="none" ng-model="model.pleural_effusion">None*
+						<ol ng-show="model.pleural_effusion && model.pleural_effusion != 'none'">
+							<li>
+								Size of pleural effusion: 
+								<input type="radio" value="small" ng-model="model.pleura_size"> Small
+								<input type="radio" value="medium" ng-model="model.pleura_size"> Medium
+								<input type="radio" value="large" ng-model="model.pleura_size">Large
+							</li>
+							<li>
+								Associated with atelectasis?
+								<input type="radio" value="no" ng-model="model.pleura_atelectasis"> No
+								<input type="radio" value="yes" ng-model="model.pleura_atelectasis"> Yes
+							</li>
+						</ol>
+					</li>
+				</ol>
+			</td>
+		</tr>
+		<tr ng-repeat="item in model.ab_items">
+			<td>
+				<input type="checkbox" ng-model="item.selected">
+				{{item.label}}
+			</td>
+			<td>
+				<abutting-invading model="item" ng-show="item.selected"></abutting-invading>
+			</td>
+		</tr>
+		<tr>
+		<td>
+			<input type="checkbox" ng-model="model.pericardium">
+			Pericardium or Heart?
+		</td>
+		<td>
+			<ol ng-show="model.pericardium">
+				<li>
+					<abutting-invading model="model.pericardium_type"></abutting-invading>
+				</li>
+				<li>
+						Pericardial Effusion?
+						<input type="radio" value="simple" ng-model="model.pericardial_effusion"> Simple
+						<input type="radio" value="thickening" ng-model="model.pericardial_effusion"> Thickening/Nodularity of associated pericardium
+						<input type="radio" value="none" ng-model="model.pericardial_effusion">None*
+						<ol ng-show="model.pericardial_effusion && model.pericardial_effusion != 'none'">
+							<li>
+								Size of pericardial effusion: 
+								<input type="radio" value="small" ng-model="model.pericardial_size"> Small
+								<input type="radio" value="medium" ng-model="model.pericardial_size"> Medium
+								<input type="radio" value="large" ng-model="model.pericardial_size">Large
+							</li>
+						</ol>
+					</li>
+			</ol>
+		</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+			<input type="checkbox" ng-model="model.mediastinal">
+			Mediastinal Vessels (including SVC)
+			<ol ng-show="model.mediastinal">
+				<li>
+					Specify which vessels:
+					<abutting-invading-table model="model.mediastinal_vessels"></abutting-invading-table>
+				</li>
+				<li>
+				Other findings:
+				<input type="text" class="form-control" ng-model="model.mediastinal_findings_text">
+				</li>
+			</ol>
+		</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="checkbox" ng-model="model.trachea_esophageal">
+				Trachea esophageal groove
+			</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+			<input type="checkbox" ng-model="model.vertebral">
+			Vertebral Body
+			<ol ng-show="model.vertebral">
+				<li>
+					Number of Vertebral Body?
+					<abutting-invading-table model="model.vertebral_body"></abutting-invading-table>
+				</li>
+				<li>
+					Is there spinal canal compromise?
+					<input type="radio" value="no" ng-model="model.vertebral_canal"> No
+					<input type="radio" value="yes" ng-model="model.vertebral_canal"> Yes*
+					<ol ng-show="model.vertebral_canal">
+						<li>
+							At which levels is there spinal compromise?
+							<inline-checkbox-form model="model.spinal_compromise"></inline-checkbox-form>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</td>
+		</tr>
+		<tr>
+		<td colspan="2">
+			<input type="checkbox" ng-model="model.chest_wall_ribs">
+			Chest wall & Ribs
+			<ol ng-show="model.chest_wall_ribs">
+			<li>
+				Specify number and side:
+				<abutting-invading-table model="model.chest_number_and_side"></abutting-invading-table>
+			</li>
+			</ol>
+		</td>
+		</tr>
+	</tbody>
+</table>

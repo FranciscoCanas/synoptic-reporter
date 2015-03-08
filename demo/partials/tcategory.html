@@ -183,37 +183,116 @@
 					</table>
 				</div>
 			</li>
-			<li><form>
-				Comment on if there is vascular involvement, the type of involvement, and % of encasement:
-				<input type="text" class="form-control" ng-model="vascular_involvement">
+			<li>
+			<form>
+				Is there ipsilateral main pulmonary artery involvement?
+				<input type="radio" value="no" ng-model="ipsilateral_involvement"> No
+				<input type="radio" value="yes" ng-model="ipsilateral_involvement"> Yes*
+				<input type="radio" value="cannot-assess" ng-model="ipsilateral_involvement"> Cannot be Assessed
 			</form>
-		</li>
-
-		<li>
-			<p>
-				Is there involvement of any other anatomical structures:
-				<input type="radio" value="no" ng-model="anatomical_structures">
-				No
-				<input type="radio" value="yes" ng-model="anatomical_structures">
-				Yes*
-			</p>
-			<div ng-show="anatomical_structures == 'yes'">
-				<nodes-radio-form model="structures"></nodes-radio-form>
+			<div ng-show="ipsilateral_involvement == 'yes'">
+			<ol>
+			<li>
+				<input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting
+				<input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing
+				<input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing*
+				<input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion
+				<input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing
+			</li>
+			<li ng-show="ipsilateral_involvement_type == 'encasing'">
+				Percentage of encasement:
+				<input type="radio" value="025" ng-model="encasement_percent"> 0-25%
+				<input type="radio" value="2650" ng-model="encasement_percent"> 26-50%
+				<input type="radio" value="5175" ng-model="encasement_percent"> 51-75%
+				<input type="radio" value="76100" ng-model="encasement_percent"> 76-100%
+			</li>
+			</ol>
 			</div>
 		</li>
 		<li>
-			Are there additional suspicious pulmonary nodules?
-			<input type="radio" value="no" ng-model="additional_nodules">
+			Is there ipsilateral upper or lower lobe pulmonary vein involvement?
+			<input type="radio" value="no" ng-model="ipsilateral_pulmonary"> No
+			<input type="radio" value="yes" ng-model="ipsilateral_pulmonary"> Yes*
+			<input type="radio" value="cannot-assess" ng-model="ipsilateral_pulmonary"> Cannot be Assessed
+			<input type="text" class="form-control" ng-model="ipsilateral_pulmonary_text">
+			<div ng-show="ipsilateral_pulmonary == 'yes'">
+				<input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting
+				<input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing
+				<input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing
+				<input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion
+				<input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing
+			</div>
+		</li>
+		<li>
+			Is there breach of the pleura?
+			<input type="radio" value="no" ng-model="breach_of_pleura">
 			No
-			<input type="radio" value="yes" ng-model="additional_nodules">
+			<input type="radio" value="yes" ng-model="breach_of_pleura">
 			Yes*
-			<div ng-show="additional_nodules == 'yes'">
-				<nodes-checkbox-form model="nodules"></nodes-checkbox-form>
+			<div ng-show="breach_of_pleura == 'yes'">
+				<ol>
+				<li>
+					Check all ipsilateral anatomical structures that are involved by the mass:
+					<ipsilateral-anatomical-structures model="ipsilateral_anatomical_structures">
+					</ipsilateral-anatomical-structures>
+				</li>
+				</ol>
 			</div>
 		</li>
-		<li><form>
-			Other notable intrathoracic findings (eg lymphangitis carcinomatosis): 
-			<input type="text" class="form-control" ng-model="other_intrathoracic_findings">
+		<li>
+			Are there additional suspicious pulmonary nodules? 
+			<input type="radio" value="no" ng-model="additional_nodules">	No
+			<input type="radio" value="yes" ng-model="additional_nodules"> Yes*
+			<input type="radio" value="cannot-determine" ng-model="additional_nodules"> Cannot be determined
+			<ol ng-show="additional_nodules == 'yes'">
+				<li>
+					<input type="checkbox" ng-model="additional_nodules_same_lobe">
+					In the same lobe
+					<ol ng-show="additional_nodules_same_lobe">
+						<li>
+							<input type="checkbox" ng-model="multiple_additional_nodules_same_lobe">
+							Multiple?
+						</li>
+						<li>
+							Size of largest pulmonary nodule:
+							<size-series-image model="additional_nodules_same_lobe_ssi"></size-series-image>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<input type="checkbox" ng-model="additional_nodules_diff_lobe">
+					In a different lobe, same lung
+					<ol ng-show="additional_nodules_diff_lobe">
+						<li>
+							<input type="checkbox" ng-model="multiple_additional_nodules_diff_lobe">
+							Multiple?
+						</li>
+						<li>
+							Size of largest pulmonary nodule:
+							<size-series-image model="additional_nodules_diff_lobe_ssi"></size-series-image>
+						</li>
+					</ol>
+				</li>
+				<li>
+					<input type="checkbox" ng-model="additional_nodules_opp_lung">
+					In the opposite lung
+					<ol ng-show="additional_nodules_opp_lung">
+						<li>
+							<input type="checkbox" ng-model="multiple_additional_nodules_opp_lung">
+							Multiple?
+						</li>
+						<li>
+							Size of largest pulmonary nodule:
+							<size-series-image model="additional_nodules_opp_lung_ssi"></size-series-image>
+						</li>
+					</ol>
+				</li>
+			</ol>
+		</li>
+		<li>
+		<form>
+			Other notable findings (eg lymphangitis carcinomatosis): 
+			<input type="text" class="form-control" ng-model="other_notable_findings">
 		</form>
 	</li>
 

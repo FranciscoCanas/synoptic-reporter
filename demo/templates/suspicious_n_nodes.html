@@ -1,0 +1,40 @@
+<table class="table">
+<tbody>
+<tr>
+	<td width="33%">
+		<input type="checkbox" ng-model="model.selected"> Suspicious {{model.label}} Nodes
+		<div ng-show="model.selected">
+			<ol>
+				<li ng-repeat="item in model.items">
+					<input type="checkbox" ng-model="item.selected"> {{item.n}} {{item.label}}
+				</li>
+			</ol>
+		</div>
+	</td>
+	<td>
+		<ol ng-show="model.selected">
+			<li>
+				The largest lymph node is:
+				<ol>
+					<li ng-repeat="item in model.items | filter:{selected: true}">
+						<input type="radio" value="{{item.label}}" ng-model="model.largest"> {{item.n}} {{item.label}}
+					</li>
+				</ol>
+			</li>
+			<li>
+				<input type="radio" value="yes" ng-model="model.largest_has_size">
+				Size of largest lymph node in short axis:
+				<input type="radio" value="cannot-assess" ng-model="model.largest_has_size">
+				Cannot be assessed
+
+				<size-series-image model="model.largest_ssi" ng-show="model.largest_has_size == 'yes'"></size-series-image>
+			</li>
+			<li>
+				Other notable findings:
+				<input type="text" class="form-control" ng-model="model.other_findings">
+			</li>
+		</ol>
+	</td>
+</tr>
+</tbody>
+</table>
