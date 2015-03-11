@@ -72,14 +72,3 @@ ul.no-margin .form-group {
 input:focus, input:active { 
 	outline: 3px solid orange;
 }
-
-
-radio[focused="true"] > .radio-label-box {
-   border: orange; 
-   outline: 3px solid orange;
-}
-
-checkbox[focused="true"] > .checkbox-label-box {
-   border: orange; 
-   outline: 3px solid orange;
-}

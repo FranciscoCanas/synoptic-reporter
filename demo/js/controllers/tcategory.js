@@ -64,6 +64,7 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 			{'label': 'Lower Lobe Bronchi'},
 			],
 		}
+		$scope.right_bronchi_selected = function() {return $scope.right_bronchi.items.some(function(element){ return element.selected; })};
 
 		$scope.left_bronchi = {
 			items: [
@@ -72,6 +73,7 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 			{'label': 'Left Lower Lobe'},
 			],
 		}
+		$scope.left_bronchi_selected = function() {return $scope.left_bronchi.items.some(function(element){ return element.selected; })};
 		
 
 		$scope.catdata = tcatSrv;

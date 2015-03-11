@@ -3,12 +3,12 @@
 <tr ng-repeat="item in model.items">
 	<td width="33%">
 		<div class="col-md-1">
-			<input type="checkbox" value="normal" ng-model="item.status">
+			<input type="checkbox" value="normal" ng-model="item.selected">
 		</div>
 		<label class="control-label"> {{item.label}}</label>
 	</td>
 	<td>
-		<degree-of-involvement model="item" ng-show="item.status"></degree-of-involvement>
+		<degree-of-involvement model="item" ng-show="item.selected"></degree-of-involvement>
 	</td>
 </tr>
 </tbody>
