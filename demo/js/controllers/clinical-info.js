@@ -4,6 +4,10 @@ angular.module('controllers').controller('clinical-infoController', function ($s
 
 	$scope.add_exam = function() {
 		$scope.previous_exams.push({modality:'', date:''});
-		console.log('added exam');
+	};
+
+	$scope.remove_exam = function() {
+		$scope.previous_exams.pop();
 	};
 });
+
