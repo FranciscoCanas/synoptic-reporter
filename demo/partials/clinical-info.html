@@ -1,27 +1,17 @@
 <div id="clinical-info" ng-controller="clinical-infoController">
 	<ol>
 		<li>
+			<br>
 			<textarea id="clinical-info-text" type="textarea" rows="5" class="form-control" placeholder="{{clinical_info_placeholder}}" ng-model="clinical_info"></textarea>
 		</li>
-		<!-- Make this smaller: -->
 		<li>
-			<form class="form-inline">
-				<label class="control-label">Modality of previous examination(s):</label>
-				<div class="input-group col-sm-1">
-					<input type="text" class="form-control input-sm" ng-model="modality">
-				</div>
-			</form>
-		</li>
-		<li>
-			<label class="control-label">Date of previous examination(s) to which this examination is being compared:</label>
-			<form class="form-inline">
-				<div class="input-group col-sm-2">
-					<input type="text" class="form-control input-sm" ng-model="date">
-				</div>
-				<label>
-					<input type="checkbox">N/A
-				</label>
-			</form>
+		Previous Examinations:
+		<ol>
+			<li ng-repeat="exam in previous_exams">
+				<previous-examination model="exam"></previous-examination>
+				<input width="25px" type="button" value="+" ng-click="add_exam()">
+			</li>
+		</ol>
 		</li>
 	</ol>
 </div>

@@ -1,21 +1,10 @@
-<ol>
-<li>
-	<form class="form-inline">
-		<label class="control-label">Modality of previous examination(s):</label>
-		<div class="input-group col-sm-1">
-			<input type="text" class="form-control input-sm" ng-model="modality">
-		</div>
-	</form>
-</li>
-<li>
-	<label class="control-label">Date of previous examination(s) to which this examination is being compared:</label>
-	<form class="form-inline">
-		<div class="input-group col-sm-2">
-			<input type="text" class="form-control input-sm" ng-model="date">
-		</div>
-		<label>
-			<input type="checkbox">N/A
-		</label>
-	</form>
-</li>
-</ol>
+<form class="form-inline">
+	<label class="control-label">Modality:</label>
+	<div class="input-group col-sm-1">
+		<input type="text" class="form-control input-sm" ng-model="model.modality">
+	</div>
+	<label class="control-label">Date:</label>
+	<div class="input-group col-sm-1">
+		<input type="text" class="form-control input-sm" ng-model="model.date">
+	</div>
+</form>

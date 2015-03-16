@@ -38,6 +38,17 @@ angular.module('synoptic').directive('nodesRadioForm', function() {
     };
 });
 
+angular.module('synoptic').directive('previousExamination', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/previous_examination.html',
+        scope: {
+            model: '='
+        }
+    };
+});
+
+
 angular.module('synoptic').directive('nodesCheckboxForm', function() {
     return {
         restrict: 'E',
