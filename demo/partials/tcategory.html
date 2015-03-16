@@ -6,18 +6,15 @@
 			<ol>
 				<li>
 					Location of main nodule/mass:
-					<input type="radio" value="peripheral" ng-model="location">
-					Peripheral
-					<input type="radio" value="central" ng-model="location">
-					Central*
+					<label class="radio-inline"><input type="radio" value="peripheral" ng-model="location">Peripheral</label>
+					<label class="radio-inline"><input type="radio" value="central" ng-model="location">Central*</label>
 				</li>
 				<div ng-show="location == 'central'">
 					<ol>
 						<li>
 							<form>
 								Is there main stem bronchus involvement?
-								<label class="radio-inline"><input type="radio" value="no" ng-model="bronchal_involvement">No</label>
-								<label class="radio-inline"><input type="radio" value="yes" ng-model="bronchal_involvement">Yes*</label>
+								<no-yes model="bronchal_involvement"></no-yes>
 							</form>
 							<ol ng-show="bronchal_involvement ==  'yes'">
 							<li>
@@ -65,17 +62,17 @@
 			<ol>
 				<li>
 					Plane in which main nodule/mass was measured:
-					<input type="radio" value="axial" ng-model="plain_measured"> Axial
-					<input type="radio" value="cornal" ng-model="plain_measured"> Coronal
-					<input type="radio" value="sagittal" ng-model="plain_measured"> Sagittal
+					<label class="radio-inline"><input type="radio" value="axial" ng-model="plain_measured"> Axial</label>
+					<label class="radio-inline"><input type="radio" value="cornal" ng-model="plain_measured"> Coronal</label>
+					<label class="radio-inline"><input type="radio" value="sagittal" ng-model="plain_measured"> Sagittal</label>
 				</li>
 				<li>
 					Is the Nodule/Mass:
-					<input type="radio" value="solid" ng-model="nodule_state"> Solid
-					<input type="radio" value="part-solid" ng-model="nodule_state"> Part-Solid*
-					<input type="radio" value="glass" ng-model="nodule_state"> Pure Ground Glass
-					<input type="radio" value="cavitary" ng-model="nodule_state"> Cavitary
-					<input type="radio" value="lucencies" ng-model="nodule_state"> Containing Cystic Lucencies
+					<label class="radio-inline"><input type="radio" value="solid" ng-model="nodule_state"> Solid</label>
+					<label class="radio-inline"><input type="radio" value="part-solid" ng-model="nodule_state"> Part-Solid*</label>
+					<label class="radio-inline"><input type="radio" value="glass" ng-model="nodule_state"> Pure Ground Glass</label>
+					<label class="radio-inline"><input type="radio" value="cavitary" ng-model="nodule_state"> Cavitary</label>
+					<label class="radio-inline"><input type="radio" value="lucencies" ng-model="nodule_state"> Containing Cystic Lucencies</label>
 					<ol>
 					<li><ul><li>
 						<!-- <form class="form-inline">
@@ -137,24 +134,24 @@
 				</li>
 				<li>
 					Margins:
-					<input type="radio" value="smooth" ng-model="margins"> Smooth
-					<input type="radio" value="ill-defined" ng-model="margins"> Ill-defined
-					<input type="radio" value="spiculated" ng-model="margins"> Spiculated
-					<input type="radio" value="lobulated" ng-model="margins"> Lobulated
-					<input type="radio" value="obscured" ng-model="margins"> Obscured*
-					<input type="radio" value="other" ng-model="margins"> Other
+					<label class="radio-inline"><input type="radio" value="smooth" ng-model="margins"> Smooth</label>
+					<label class="radio-inline"><input type="radio" value="ill-defined" ng-model="margins"> Ill-defined</label>
+					<label class="radio-inline"><input type="radio" value="spiculated" ng-model="margins"> Spiculated</label>
+					<label class="radio-inline"><input type="radio" value="lobulated" ng-model="margins"> Lobulated</label>
+					<label class="radio-inline"><input type="radio" value="obscured" ng-model="margins"> Obscured*</label>
+					<label class="radio-inline"><input type="radio" value="other" ng-model="margins"> Other</label>
 					<input ng-show="margins == 'other'" type="text" class="form-control" ng-model="margin_other_text">
 					<div ng-show="margins== 'obscured' ">
 						<ol>
 							<li>
 							Margins obscured by:
-							<input type="radio" value="scarring" ng-model="margins_obscured"> Scarring
-							<input type="radio" value="atelectasis" ng-model="margins_obscured"> Atelectasis/Post obstructive pneumonitis*
+							<label class="radio-inline"><input type="radio" value="scarring" ng-model="margins_obscured"> Scarring</label>
+							<label class="radio-inline"><input type="radio" value="atelectasis" ng-model="margins_obscured"> Atelectasis/Post obstructive pneumonitis*</label>
 							<div ng-show="margins_obscured == 'atelectasis'">
 							<ol><li>
-							<input type="radio" value="less-than-lobe" ng-model="atelectasis"> Less than whole lobe
-							<input type="radio" value="whole-lobe" ng-model="atelectasis"> Whole lobe
-							<input type="radio" value="whole-lung" ng-model="atelectasis"> Whole lung
+							<label class="radio-inline"><input type="radio" value="less-than-lobe" ng-model="atelectasis"> Less than whole lobe</label>
+							<label class="radio-inline"><input type="radio" value="whole-lobe" ng-model="atelectasis"> Whole lobe</label>
+							<label class="radio-inline"><input type="radio" value="whole-lung" ng-model="atelectasis"> Whole lung</label>
 							</li></ol>
 							</div>
 							</li>
@@ -164,9 +161,9 @@
 				</li>
 				<li>
 				Are there air bronchograms within the mass?
-				<input type="radio" value="no" ng-model="bronchograms"> No
-				<input type="radio" value="yes" ng-model="bronchograms"> Yes
-				<input type="radio" value="cannot-assess" ng-model="bronchograms"> Cannot be Assessed
+				<label class="radio-inline"><input type="radio" value="no" ng-model="bronchograms"> No</label>
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="bronchograms"> Yes</label>
+				<label class="radio-inline"><input type="radio" value="cannot-assess" ng-model="bronchograms"> Cannot be Assessed</label>
 				</li>
 			</ol>
 		</li>
@@ -176,8 +173,7 @@
 				<li>
 				<form>
 					Is there bronchial involvement?
-					<input type="radio" value="no" ng-model="bronchial_involvement"> No
-					<input type="radio" value="yes" ng-model="bronchial_involvement"> Yes*
+					<no-yes model="bronchial_involvement"></no-yes>
 				</form>
 				<div ng-show="bronchial_involvement == 'yes'">
 					<table class="table">
@@ -203,49 +199,46 @@
 			<li>
 			<form>
 				Is there ipsilateral main pulmonary artery involvement?
-				<input type="radio" value="no" ng-model="ipsilateral_involvement"> No
-				<input type="radio" value="yes" ng-model="ipsilateral_involvement"> Yes*
-				<input type="radio" value="cannot-assess" ng-model="ipsilateral_involvement"> Cannot be Assessed
+				<label class="radio-inline"><input type="radio" value="no" ng-model="ipsilateral_involvement"> No</label>
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="ipsilateral_involvement"> Yes*</label>
+				<label class="radio-inline"><input type="radio" value="cannot-assess" ng-model="ipsilateral_involvement"> Cannot be Assessed</label>
 			</form>
 			<div ng-show="ipsilateral_involvement == 'yes'">
 			<ol>
 			<li>
-				<input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting
-				<input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing
-				<input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing*
-				<input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion
-				<input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing
+				<label class="radio-inline"><input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting</label>
+				<label class="radio-inline"><input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing</label>
+				<label class="radio-inline"><input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing*</label>
+				<label class="radio-inline"><input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion</label>
+				<label class="radio-inline"><input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing</label>
 			</li>
 			<li ng-show="ipsilateral_involvement_type == 'encasing'">
 				Percentage of encasement:
-				<input type="radio" value="025" ng-model="encasement_percent"> 0-25%
-				<input type="radio" value="2650" ng-model="encasement_percent"> 26-50%
-				<input type="radio" value="5175" ng-model="encasement_percent"> 51-75%
-				<input type="radio" value="76100" ng-model="encasement_percent"> 76-100%
+				<label class="radio-inline"><input type="radio" value="025" ng-model="encasement_percent"> 0-25%</label>
+				<label class="radio-inline"><input type="radio" value="2650" ng-model="encasement_percent"> 26-50%</label>
+				<label class="radio-inline"><input type="radio" value="5175" ng-model="encasement_percent"> 51-75%</label>
+				<label class="radio-inline"><input type="radio" value="76100" ng-model="encasement_percent"> 76-100%</label>
 			</li>
 			</ol>
 			</div>
 		</li>
 		<li>
 			Is there ipsilateral upper or lower lobe pulmonary vein involvement?
-			<input type="radio" value="no" ng-model="ipsilateral_pulmonary"> No
-			<input type="radio" value="yes" ng-model="ipsilateral_pulmonary"> Yes*
-			<input type="radio" value="cannot-assess" ng-model="ipsilateral_pulmonary"> Cannot be Assessed
+			<label class="radio-inline"><input type="radio" value="no" ng-model="ipsilateral_pulmonary"> No</label>
+			<label class="radio-inline"><input type="radio" value="yes" ng-model="ipsilateral_pulmonary"> Yes*</label>
+			<label class="radio-inline"><input type="radio" value="cannot-assess" ng-model="ipsilateral_pulmonary"> Cannot be Assessed</label>
 			<input type="text" class="form-control" ng-model="ipsilateral_pulmonary_text">
 			<div ng-show="ipsilateral_pulmonary == 'yes'">
-				<input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting
-				<input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing
-				<input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing
-				<input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion
-				<input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing
+				<label class="radio-inline"><input type="radio" value="abutting" ng-model="ipsilateral_involvement_type"> Abutting</label>
+				<label class="radio-inline"><input type="radio" value="displacing" ng-model="ipsilateral_involvement_type"> Displacing</label>
+				<label class="radio-inline"><input type="radio" value="encasing" ng-model="ipsilateral_involvement_type"> Encasing</label>
+				<label class="radio-inline"><input type="radio" value="complete-occlusion" ng-model="ipsilateral_involvement_type"> Complete Occlusion</label>
+				<label class="radio-inline"><input type="radio" value="narrowing" ng-model="ipsilateral_involvement_type"> Narrowing</label>
 			</div>
 		</li>
 		<li>
 			Is there breach of the pleura?
-			<input type="radio" value="no" ng-model="breach_of_pleura">
-			No
-			<input type="radio" value="yes" ng-model="breach_of_pleura">
-			Yes*
+			<no-yes model="breach_of_plerua"></no-yes>
 			<div ng-show="breach_of_pleura == 'yes'">
 				<ol>
 				<li>
@@ -258,9 +251,9 @@
 		</li>
 		<li>
 			Are there additional suspicious pulmonary nodules? 
-			<input type="radio" value="no" ng-model="additional_nodules">	No
-			<input type="radio" value="yes" ng-model="additional_nodules"> Yes*
-			<input type="radio" value="cannot-determine" ng-model="additional_nodules"> Cannot be determined
+			<label class="radio-inline"><input type="radio" value="no" ng-model="additional_nodules"> No</label>
+			<label class="radio-inline"><input type="radio" value="yes" ng-model="additional_nodules"> Yes*</label>
+			<label class="radio-inline"><input type="radio" value="cannot-determine" ng-model="additional_nodules"> Cannot be determined</label>
 			<ol ng-show="additional_nodules == 'yes'">
 				<li>
 					<input type="checkbox" ng-model="additional_nodules_same_lobe">

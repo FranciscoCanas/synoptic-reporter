@@ -2,30 +2,28 @@
 <tbody>
 <tr>
 	<td width="33%">
-		<input type="checkbox" ng-model="model.selected"> Suspicious {{model.label}} Nodes
+		<label class="checkbox-inline"><input type="checkbox" ng-model="model.selected"> {{model.label}} Nodes</label>
 		<div ng-show="model.selected">
-			<ol>
+			<ul>
 				<li ng-repeat="item in model.items">
-					<input type="checkbox" ng-model="item.selected"> {{item.n}} {{item.label}}
+					<label class="checkbox-inline"><input type="checkbox" ng-model="item.selected"> {{item.n}} {{item.label}}</label>
 				</li>
-			</ol>
+			</ul>
 		</div>
 	</td>
 	<td>
 		<ol ng-show="model.selected">
 			<li>
 				The largest lymph node is:
-				<ol>
+				<ul>
 					<li ng-repeat="item in model.items | filter:{selected: true}">
-						<input type="radio" value="{{item.label}}" ng-model="model.largest"> {{item.n}} {{item.label}}
+						<label class="checkbox-inline"><input type="radio" value="{{item.label}}" ng-model="model.largest"> {{item.n}} {{item.label}}</label>
 					</li>
-				</ol>
+				</ul>
 			</li>
 			<li>
-				<input type="radio" value="yes" ng-model="model.largest_has_size">
-				Size of largest lymph node in short axis:
-				<input type="radio" value="cannot-assess" ng-model="model.largest_has_size">
-				Cannot be assessed
+				<label class="radio-inline"><input type="radio" value="yes" ng-model="model.largest_has_size">Size of largest lymph node in short axis:</label>
+				<label class="radio-inline"><input type="radio" value="cannot-assess" ng-model="model.largest_has_size">Cannot be assessed</label>
 
 				<size-series-image model="model.largest_ssi" ng-show="model.largest_has_size == 'yes'"></size-series-image>
 			</li>

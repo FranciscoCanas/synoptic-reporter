@@ -24,6 +24,8 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 		]};
 
 		$scope.peripheral_nodules = {
+			col_range: [0,1,2],
+			col_offset: 3,
 			panels: [
 			{	
 				heading: 'RUL',
@@ -108,6 +110,8 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 			},
 
 			vertebral_body: {
+				col_range: [0,1,2,3,4,5],
+				col_offset: 6,
 				items: [
 				{label: 'T1'},
 				{label: 'T2'},
@@ -142,6 +146,8 @@ angular.module('controllers').controller('tcategoryController', function ($scope
 			},
 
 			chest_number_and_side: {
+				col_range: [0,1,2,3,4,5,6,7,8,9,10,11],
+				col_offset: 12,
 				items: [
 				{label: '1R'},
 				{label: '2R'},

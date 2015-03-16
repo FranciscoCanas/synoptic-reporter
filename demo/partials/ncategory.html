@@ -5,8 +5,7 @@
 			<ul>
 				<li>
 					Are there suspicious N1, N2, or N3 nodes?
-					<label class="radio-inline"><input type="radio" value="no" ng-model="suspicious_n_nodes">No</label>
-					<label class="radio-inline"><input type="radio" value="yes" ng-model="suspicious_n_nodes">Yes*</label>
+					<no-yes model="suspicious_n_nodes"></no-yes>
 				</li>
 				<li ng-show="suspicious_n_nodes == 'yes'">
 					<ul>

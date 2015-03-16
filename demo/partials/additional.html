@@ -2,10 +2,8 @@
 	<h6 class="section-title">6 - Additional Findings</h6>
 	<ol>
 		<li>
-			<p>Are there additional findings?
-				<label class="radio-inline"><input type="radio" value="no" ng-model="extra_findings">No</label>
-				<label class="radio-inline"><input type="radio" value="yes" ng-model="extra_findings">Yes*</label>
-			</p>
+			Are there additional findings?
+			<no-yes model="extra_findings"></no-yes>
 			<div ng-show="extra_findings == 'yes'">
 				<additional-findings-table model="findings"></additional-findings-table>
 			</div>

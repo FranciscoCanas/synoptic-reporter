@@ -2,18 +2,18 @@
 	<tbody>
 		<tr>
 			<td width="15%">
-				<input type="checkbox" ng-model="model.selected"> {{model.label}}
+				<label class="checkbox-inline"><input type="checkbox" ng-model="model.selected"> {{model.label}}</label>
 			</td>
 			<td width="35%">
 				<ul ng-show="model.selected">
 					<li>
-					<input type="radio" value="suspicious" ng-model="model.status"> Suspicious for metastatic disease*
+					<label><input type="radio" value="suspicious" ng-model="model.status"> Suspicious for metastatic disease*</label>
 					</li>
 					<li>
-					<input type="radio" value="cannot-assess" ng-model="model.status"> Cannot be assessed
+					<label><input type="radio" value="cannot-assess" ng-model="model.status"> Cannot be assessed</label>
 					</li>
 					<li>
-					<input type="radio" value="benign" ng-model="model.status"> Benign
+					<label><input type="radio" value="benign" ng-model="model.status"> Benign</label>
 					</li>
 				</ul>
 			</td>

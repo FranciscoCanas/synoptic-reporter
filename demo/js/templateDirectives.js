@@ -1,3 +1,13 @@
+angular.module('synoptic').directive('noYes', function() {
+    return {
+        restrict: 'E',
+        templateUrl: 'templates/no_yes.html',
+        scope: {
+            model: '='
+        }
+    };
+});
+
 angular.module('synoptic').directive('radioForm', function() {
     return {
         restrict: 'E',
@@ -41,7 +51,7 @@ angular.module('synoptic').directive('nodesCheckboxForm', function() {
 angular.module('synoptic').directive('inlineRadioForm', function() {
     return {
         restrict: 'E',
-        templateUrl: 'templates/side_by_side_radio.html',
+        templateUrl: 'templates/inline-radio-form.html',
         scope: {
             model: '='
         }

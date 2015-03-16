@@ -1,12 +1,19 @@
 <table class="table">
 <tbody>
-		<tr ng-repeat="item in model.items">
-			<td width="33%">
-				<input type="checkbox" ng-model="item.selected">
-				{{item.label}}
+		<tr ng-repeat="i in model.col_range track by $index">
+			<td width="8%">
+				<input type="checkbox" ng-model="model.items[$index].selected">
+				{{model.items[$index].label}}
 			</td>
-			<td>
-				<abutting-invading model="item" ng-show="item.selected"></abutting-invading>
+			<td width="35%">
+				<abutting-invading model="model.items[$index]" ng-show="model.items[$index].selected"></abutting-invading>
+			</td>
+			<td width="8%">
+				<input type="checkbox" ng-model="model.items[$index + model.col_offset].selected">
+				{{model.items[$index + model.col_offset].label}}
+			</td>
+			<td width="35%">
+				<abutting-invading model="model.items[$index + 6]" ng-show="model.items[$index + model.col_offset].selected"></abutting-invading>
 			</td>
 		</tr>
 </tbody>
