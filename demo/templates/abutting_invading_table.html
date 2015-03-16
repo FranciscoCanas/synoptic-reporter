@@ -2,15 +2,15 @@
 <tbody>
 		<tr ng-repeat="i in model.col_range track by $index">
 			<td width="8%">
-				<input type="checkbox" ng-model="model.items[$index].selected">
-				{{model.items[$index].label}}
+				<label><input type="checkbox" ng-model="model.items[$index].selected">
+				{{model.items[$index].label}}</label>
 			</td>
 			<td width="35%">
 				<abutting-invading model="model.items[$index]" ng-show="model.items[$index].selected"></abutting-invading>
 			</td>
 			<td width="8%">
-				<input type="checkbox" ng-model="model.items[$index + model.col_offset].selected">
-				{{model.items[$index + model.col_offset].label}}
+				<label><input type="checkbox" ng-model="model.items[$index + model.col_offset].selected">
+				{{model.items[$index + model.col_offset].label}}</label>
 			</td>
 			<td width="35%">
 				<abutting-invading model="model.items[$index + 6]" ng-show="model.items[$index + model.col_offset].selected"></abutting-invading>
