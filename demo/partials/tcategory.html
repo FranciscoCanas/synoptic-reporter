@@ -256,12 +256,12 @@
 			<label class="radio-inline"><input type="radio" value="cannot-determine" ng-model="additional_nodules"> Cannot be determined</label>
 			<ol ng-show="additional_nodules == 'yes'">
 				<li>
-					<input type="checkbox" ng-model="additional_nodules_same_lobe">
-					In the same lobe
+					<label><input type="checkbox" ng-model="additional_nodules_same_lobe">
+					In the same lobe</label>
 					<ol ng-show="additional_nodules_same_lobe">
 						<li>
-							<input type="checkbox" ng-model="multiple_additional_nodules_same_lobe">
-							Multiple?
+							<label><input type="checkbox" ng-model="multiple_additional_nodules_same_lobe">
+							Multiple?</label>
 						</li>
 						<li>
 							Size of largest pulmonary nodule:
@@ -270,12 +270,12 @@
 					</ol>
 				</li>
 				<li>
-					<input type="checkbox" ng-model="additional_nodules_diff_lobe">
-					In a different lobe, same lung
+					<label><input type="checkbox" ng-model="additional_nodules_diff_lobe">
+					In a different lobe, same lung</label>
 					<ol ng-show="additional_nodules_diff_lobe">
 						<li>
-							<input type="checkbox" ng-model="multiple_additional_nodules_diff_lobe">
-							Multiple?
+							<label><input type="checkbox" ng-model="multiple_additional_nodules_diff_lobe">
+							Multiple?</label>
 						</li>
 						<li>
 							Size of largest pulmonary nodule:
@@ -284,12 +284,12 @@
 					</ol>
 				</li>
 				<li>
-					<input type="checkbox" ng-model="additional_nodules_opp_lung">
-					In the opposite lung
+					<label><input type="checkbox" ng-model="additional_nodules_opp_lung">
+					In the opposite lung</label>
 					<ol ng-show="additional_nodules_opp_lung">
 						<li>
-							<input type="checkbox" ng-model="multiple_additional_nodules_opp_lung">
-							Multiple?
+							<label><input type="checkbox" ng-model="multiple_additional_nodules_opp_lung">
+							Multiple?</label>
 						</li>
 						<li>
 							Size of largest pulmonary nodule:
