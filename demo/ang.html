@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<!-- Bootstrap Dependencies-->
+	<link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-responsive.css">
+	<!-- Angular Dependencies-->
+	<script src="angular/angular.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row row-offcanvas row-offcanvas-right">
+			<div class="col-xs-12 col-sm-9">
+				<!--MAIN PANE content-->
+				<div id="musicQuestions">
+					<p class="bg-primary">1. Music</p>
+					<p>Listen to Music:  
+						<input type="radio" value="yes" ng-model="listensToMusic">Yes
+						<input type="radio" value="no" ng-model="listensToMusic">No
+					</p>
+					<div ng-show="listensToMusic == 'yes'">
+						Which genre do you prefer?
+						<form>
+						<input type="radio" value="megaphone" ng-model="musicGenre">Megaphone Crooners 
+						<input type="radio" value="mariachi" ng-model="musicGenre">Mexican Mariachi 
+						<input type="radio" value="minstrel" ng-model="musicGenre">Banjo Minstrels 
+						</form>
+					</div>
+					<p>
+					<div ng-show="musicGenre == 'megaphone'">
+						Ah, the golden age of megaphone crooning!
+					</div>
+					<div ng-show="musicGenre == 'mariachi'">
+						Who can resist the irresistible force of the Mexican Mariachi band?
+					</div>
+					<div ng-show="musicGenre == 'minstrel'">
+						How problematic.
+					</div>
+					</p>
+				</div>
+				<div id="filmQuestions">
+					<div>
+						<p class="bg-primary">2. Film</p>
+						<p>Watch Film:
+							<input type="radio" value="yes" ng-model="watchesFilm">Yes
+							<input type="radio" value="no" ng-model="watchesFilm">No
+						</p>
+					</div>
+					<div ng-show="watchesFilm == 'yes'">
+						Which films have you watched? (select all that apply)
+						<form action="">
+							<input type="checkbox" value="" ng-model="watchedReefer">Reefer Madness (1936)<br>
+							<input type="checkbox" value="" ng-model="watchedPlan">Plan 9 From Outer Space (1959)<br>
+							<input type="checkbox" value="" ng-model="watchedManos">
+							Manos: The Hands of Fate (1966)<br>
+						</form>
+					</div>
+					<p>
+					<div ng-show="watchedReefer && watchedManos && !watchedPlan">
+						You'd definitely enjoy Plan 9. Give it a chance.
+					</div>
+					<div ng-show="watchedReefer && !watchedManos && watchedPlan">
+						I keep hearing great things about Manos. Maybe you should watch it.
+					</div>
+					<div ng-show="watchedPlan && watchedManos && !watchedReefer">
+						Reefer is a classic! You should watch it.
+					</div>
+					<div ng-show="watchedPlan && watchedManos && watchedReefer">
+						A real film buff.
+					</div>
+					</p>
+				</div>
+				<div id="animalQuestions">
+					<div>
+						<p class="bg-primary">3. Animals</p>
+						<p>Have Pets: <input type="checkbox" ng-model="hasAnimals"></p>
+					</div>
+					<div ng-show="hasAnimals">
+						Which kind of pets? (select all that apply)
+						<form action="">
+							<input type="checkbox" value="monkeys" ng-model="hasMonkeys">Monkeys<br>
+							<input type="checkbox" value="ducks" ng-model="hasDucks">Ducks
+						</form>
+						<p>
+						<div ng-show="hasDucks">
+							Ducks are the bane of my existence.
+						</div>
+						<div ng-show="hasMonkeys">
+							Monkeys make for excellent companions.
+						</div>
+						</p>
+					</div>
+				</div>
+			</div> <!-- End of Main Pane -->
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+				<!--SIDE BAR Content-->
+				<div class="list-group">
+					<a href="#musicQuestions" class="list-group-item">Music</a>
+					<a href="#filmQuestions" class="list-group-item">Film</a>
+					<a href="#animalsQuestions" class="list-group-item">Animals</a>
+				</div>
+			</div> <!-- End of Sidebar -->
+		</div>
+	</div>
+</body>
+</html>

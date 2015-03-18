@@ -12,10 +12,10 @@
 					</li>
 					<li>
 						Pleural Effusion?
-						<label class="radio-inline"><input type="radio" value="simple" ng-model="model.pleural_effusion"> Simple</label>
-						<label class="radio-inline"><input type="radio" value="thickening" ng-model="model.pleural_effusion"> Thickening/Nodularity of Pleura</label>
-						<label class="radio-inline"><input type="radio" value="loculated" ng-model="model.pleural_effusion"> Loculated</label>
-						<label class="radio-inline"><input type="radio" value="none" ng-model="model.pleural_effusion"> None*</label>
+						<label class="radio-inline"><input type="radio" value="simple" ng-model="model.pleural_effusion"> Simple*</label>
+						<label class="radio-inline"><input type="radio" value="thickening" ng-model="model.pleural_effusion"> Thickening/Nodularity of Pleura*</label>
+						<label class="radio-inline"><input type="radio" value="loculated" ng-model="model.pleural_effusion"> Loculated*</label>
+						<label class="radio-inline"><input type="radio" value="none" ng-model="model.pleural_effusion"> None</label>
 						<ol ng-show="model.pleural_effusion && model.pleural_effusion != 'none'">
 							<li>
 								Size of pleural effusion: 
@@ -54,9 +54,9 @@
 				</li>
 				<li>
 						Pericardial Effusion?
-						<label class="radio-inline"><input type="radio" value="simple" ng-model="model.pericardial_effusion"> Simple</label>
-						<label class="radio-inline"><input type="radio" value="thickening" ng-model="model.pericardial_effusion"> Thickening/Nodularity of associated pericardium</label>
-						<label class="radio-inline"><input type="radio" value="none" ng-model="model.pericardial_effusion"> None*</label>
+						<label class="radio-inline"><input type="radio" value="simple" ng-model="model.pericardial_effusion"> Simple*</label>
+						<label class="radio-inline"><input type="radio" value="thickening" ng-model="model.pericardial_effusion"> Thickening/Nodularity of associated pericardium*</label>
+						<label class="radio-inline"><input type="radio" value="none" ng-model="model.pericardial_effusion"> None</label>
 						<ol ng-show="model.pericardial_effusion && model.pericardial_effusion != 'none'">
 							<li>
 								Size of pericardial effusion: 

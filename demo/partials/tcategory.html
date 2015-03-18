@@ -6,7 +6,7 @@
 			<ol>
 				<li>
 					Location of main nodule/mass:
-					<label class="radio-inline"><input type="radio" value="peripheral" ng-model="location">Peripheral</label>
+					<label class="radio-inline"><input type="radio" value="peripheral" ng-model="location">Peripheral*</label>
 					<label class="radio-inline"><input type="radio" value="central" ng-model="location">Central*</label>
 				</li>
 				<div ng-show="location == 'central'">
@@ -31,16 +31,16 @@
 							<form class="form-inline">
 								<label class="control-label">What is the distance from the mass to the carina?</label>
 								<br>
-								<div class="input-group col-sm-2">
+								<div class="input-group col-xs-2">
 									<input type="text" class="form-control input-sm" ng-model="dist_to_carina">
 									<div class="input-group-addon">mm</div>
 								</div>
 								<label class="control-label">Series:</label>
-								<div class="input-group col-sm-1">
+								<div class="input-group col-xs-1">
 									<input type="text" class="form-control input-sm" ng-model="dist_to_carina_series">
 								</div>
 								<label class="control-label">Image:</label>
-								<div class="input-group col-sm-1">
+								<div class="input-group col-xs-1">
 									<input type="text" class="form-control input-sm" ng-model="dist_to_carina_image">
 								</div>
 							</form>

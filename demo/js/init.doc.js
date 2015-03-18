@@ -2,7 +2,7 @@
 Initialization javascript. Runs on document load.
 */
 function initializeDoc(){
-	initializeToggleables();
+	//initializeToggleables();
 }
 
 /*

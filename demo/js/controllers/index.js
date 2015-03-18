@@ -14,15 +14,15 @@ $scope.goToSection = function(id) {
   		/*
 		* Center all input fields when user focuses on them.
 		*/
-		$(':input').focus(function(){
-			var ele = $(this);
-			var center = $(window).height() / 2;
-			var top = $(this).offset().top ;
-			ele.attr('test','la');
-			if (top > center){
-				$(window).scrollTop(top - center);
-			}
-		});
+		// $(':input').focus(function(){
+		// 	var ele = $(this);
+		// 	var center = $(window).height() / 2;
+		// 	var top = $(this).offset().top ;
+		// 	ele.attr('test','la');
+		// 	if (top > center){
+		// 		$(window).scrollTop(top - center);
+		// 	}
+		// });
 	});
 
 	$scope.title = "CT Lung for Cancer Staging – Clinical Content";
