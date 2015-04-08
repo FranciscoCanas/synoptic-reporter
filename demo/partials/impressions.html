@@ -1,14 +1,27 @@
 <div id="impressions" ng-controller="impressionsController">
 	<ol>
-	
 		<li>
-			Radiologic Staging (TNM 7th edition):
-			<ul>
-				<li ng-repeat="finding in findings.items">
-					<label class="radio-inline">{{$index+1}}) {{finding.label}}</label>
-					<inline-radio-form model="finding"></inline-radio-form>
-				</li>
-			</ul>
+			<table>
+				<tbody>
+					<tr>
+						<td width="60%">
+							Radiologic Staging (TNM 7th edition):
+							<ul>
+								<li ng-repeat="finding in findings.items">
+									<label class="radio-inline">{{$index+1}}) {{finding.label}}</label>
+									<label class="radio-inline" ng-repeat="item in finding.items" ng-mouseover="findings.selected = item">
+										<input type="radio" value="{{item}}" ng-model="finding.selected"> {{item}}
+									</label>
+
+								</li>
+							</ul>
+						</td>
+						<td width="40%">
+							{{TNMGuide[findings.selected]}}
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</li>
 		<li>
 			Impressions/Summary:
